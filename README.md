@@ -137,8 +137,8 @@ $ rails g migration AddEmailAndRottingToZombie email:string rotting:boolean
 
     create    db/migrate/20170124222057_add_email_and_rotting_to_zombie.rb
 
-
 ```
+
 ####migration options:
 ```ruby
     default: <value>
@@ -149,3 +149,21 @@ $ rails g migration AddEmailAndRottingToZombie email:string rotting:boolean
     unique: true
 ```
   
+###Migration rake task
+```ruby
+$ rake db:migrate       #To run all missing migrations
+
+$ rake db:rollback      #To rollback the previous migration
+
+$ rake db:schema:dump       #Dump the current db state
+
+$ rake db:setup       #Creates db, loads schema and seed
+
+```
+
+###Migration commands
+```ruby
+$ rails g migration RemoveAgeFromZombies age:integer
+
+```
+
