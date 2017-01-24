@@ -4,12 +4,12 @@
 $ rails new TwitterForZombies
 ```
 
-###Instal dependencies
+###Install dependencies
 ```ruby
 $ bundle install
 ```
 
-###List rails option
+###List rails options
 ```ruby
 $ rails
 
@@ -20,6 +20,7 @@ $ rails
      dbconsole   Start a console for the database specified in config/database.yml
                  (short-cut alias: "db")
 ```
+
 
 ###Run server
 ```ruby
@@ -64,6 +65,16 @@ $ rails generate scaffold zombie name:string bio:text age:integer
       create      app/views/zombies/show.html.erb
       create      app/views/zombies/new.html.erb
       create      app/views/zombies/_form.html.erb
+```
+
+###Running Migrations
+```ruby
+$ rake db:migrate
+    
+    == 20170124184009 CreateZombies: migrating ====================================
+    -- create_table(:zombies)
+       -> 0.0010s
+    == 20170124184009 CreateZombies: migrated (0.0011s) ===========================
 ```
 
 
