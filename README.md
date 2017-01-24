@@ -78,3 +78,55 @@ $ rake db:migrate
 ```
 
 
+
+###Rails Console
+```ruby
+$ rails console
+
+    Zombie.create(name: "Eric A", age: 27)
+        (0.1ms)  begin transaction
+        SQL (0.4ms)  INSERT INTO "zombies" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Eric A"], ["age", 27], ["created_at", "2017-01-24 19:04:50.032077"], ["updated_at", "2017-01-24 19:04:50.032077"]]
+        (9.9ms)  commit transaction
+        => #<Zombie id: 1, name: "Eric A", bio: nil, age: 27, created_at: "2017-01-24 19:04:50", updated_at: "2017-01-24 19:04:50">
+
+    z = Zombie.first
+        Zombie Load (0.3ms)  SELECT  "zombies".* FROM "zombies"  ORDER BY "zombies"."id" ASC LIMIT 1
+        => #<Zombie id: 1, name: "Eric A", bio: nil, age: 27, created_at: "2017-01-24 19:04:50", updated_at: "2017-01-24 19:04:50"> 
+        
+    z.name = "Caike S"    
+        => "Caike S" 
+        
+    z.save    
+        (0.1ms)  begin transaction
+        SQL (0.3ms)  UPDATE "zombies" SET "name" = ?, "updated_at" = ? WHERE "zombies"."id" = ?  [["name", "Caike S"], ["updated_at", "2017-01-24 19:08:08.535456"], ["id", 1]]
+        (9.7ms)  commit transaction
+        => true 
+```
+
+
+
+###Rails Console
+```ruby
+$ rails console
+
+    Zombie.create(name: "Eric A", age: 27)
+        (0.1ms)  begin transaction
+        SQL (0.4ms)  INSERT INTO "zombies" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Eric A"], ["age", 27], ["created_at", "2017-01-24 19:04:50.032077"], ["updated_at", "2017-01-24 19:04:50.032077"]]
+        (9.9ms)  commit transaction
+        => #<Zombie id: 1, name: "Eric A", bio: nil, age: 27, created_at: "2017-01-24 19:04:50", updated_at: "2017-01-24 19:04:50">
+
+    z = Zombie.first
+        Zombie Load (0.3ms)  SELECT  "zombies".* FROM "zombies"  ORDER BY "zombies"."id" ASC LIMIT 1
+        => #<Zombie id: 1, name: "Eric A", bio: nil, age: 27, created_at: "2017-01-24 19:04:50", updated_at: "2017-01-24 19:04:50"> 
+        
+    z.name = "Caike S"    
+        => "Caike S" 
+        
+    z.save    
+        (0.1ms)  begin transaction
+        SQL (0.3ms)  UPDATE "zombies" SET "name" = ?, "updated_at" = ? WHERE "zombies"."id" = ?  [["name", "Caike S"], ["updated_at", "2017-01-24 19:08:08.535456"], ["id", 1]]
+        (9.7ms)  commit transaction
+        => true 
+```
+
+  
