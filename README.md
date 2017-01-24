@@ -167,3 +167,12 @@ $ rails g migration RemoveAgeFromZombies age:integer
 
 ```
 
+####Migration commands
+```ruby
+rename_column :zombies, :bio, :description
+rename_table :zombies, :ghouls
+drop_table :zombies
+change_column :zombies, :age, :integer, limit: 4
+change_column_default :zombies, is_admin, default: true
+```
+
