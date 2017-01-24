@@ -129,4 +129,23 @@ $ rails console
         => true 
 ```
 
+
+
+###Adding columns
+```ruby
+$ rails g migration AddEmailAndRottingToZombie email:string rotting:boolean
+
+    create    db/migrate/20170124222057_add_email_and_rotting_to_zombie.rb
+
+
+```
+####migration options:
+```ruby
+    default: <value>
+    limit: 30
+    null: false
+    first: true     #postion in the table
+    after: email
+    unique: true
+```
   
