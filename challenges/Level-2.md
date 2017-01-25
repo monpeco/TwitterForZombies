@@ -263,12 +263,71 @@ And in this way, both zombie and brain are destoyed.
 
 ####Relationship "include" option
 
+|Name|Brain Flavor|
+|----|------------|
+|Joe|Mud|
+|Jim|Strawberry|
+|Bob|Butter|
+|Tony|Bubble Gum|
+
+_*File*_: `app/controllers/zombies_controller.rb`
+
+```ruby
+def index
+  @zombies = Zombie.all
+```
 
 
+_*File*_: `app/views/zombies/index.html.erb`
+
+```ruby
+<% @zombies.each do |zombie| %>
+  <tr>
+    <td><%= zombie.name %></td>
+    <td><%= zombie.brain.flavor %></td>
+  </tr>
+<% end %>
+
+```
+
+Server runs (a N+1 query)
+```
+Zombie load (0.1ms) SELECT * FROM "zombies"
+  Brain load (0.2ms) SELECT * FROM "brains" WHERE "zombie_id" = 4
+  Brain load (0.2ms) SELECT * FROM "brains" WHERE "zombie_id" = 5
+  Brain load (0.2ms) SELECT * FROM "brains" WHERE "zombie_id" = 6
+  Brain load (0.2ms) SELECT * FROM "brains" WHERE "zombie_id" = 7
+
+```
+
+How we fix this? with the `includes` option
+
+_*File*_: `app/controllers/zombies_controller.rb`
+
+```ruby
+def index
+  @zombies = Zombie.includes(:brain).all
+```
 
 
+_*File*_: `app/views/zombies/index.html.erb`
 
+```ruby
+<% @zombies.each do |zombie| %>
+  <tr>
+    <td><%= zombie.name %></td>
+    <td><%= zombie.brain.flavor %></td>
+  </tr>
+<% end %>
 
+```
+
+Server runs 
+```
+Zombie load (0.1ms) SELECT * FROM "zombies"
+  Brain load (0.3ms) SELECT * FROM "brains" WHERE "zombie_id" IN(4, 5, 6, 7)
+
+```
 
 
 
