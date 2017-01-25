@@ -1,6 +1,6 @@
 ##Name Scope
 
-_File_: `app/controllers/rotting_zombies_controller.rb`
+_*File*_: `app/controllers/rotting_zombies_controller.rb`
 
 ```ruby
 class RottingZombiesController < ApplicationController
@@ -15,7 +15,7 @@ end
 
 If we are going to use this `where(rotting: true)` in several places, is better to move it to the model
 
-`app/models/zombie.rb`
+_*File*_: `app/models/zombie.rb`
 ```ruby
 class Zombie < ActiveRecord::Base
 
@@ -24,7 +24,7 @@ class Zombie < ActiveRecord::Base
 end
 ```
 
-app/controllers/rotting_zombies_controller.rb
+_*File*_: `app/controllers/rotting_zombies_controller.rb`
 ```ruby
 class RottingZombiesController < ApplicationController
 
@@ -37,7 +37,7 @@ end
 ```
 
 ####Another examples of Named Scope
-app/models/zombie.rb
+_*File*_: `app/models/zombie.rb`
 ```ruby
 class Zombie < ActiveRecord::Base
 
