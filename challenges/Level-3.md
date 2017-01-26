@@ -108,8 +108,29 @@ class UserController < ApplicationController
     
 ```
 
+####Explaining PUT and DELETE
 
+This code
+```rails
+<%= link_to 'update', zombie, method: :put %>
+<%= link_to 'delete', zombie, method: :delete %>
+```
 
+Will generate this code on our page (2 HTML5 data attributes)
+```rails
+<a href="/zombies/4" data-method="put" rel="nofollow">update</a>
+<a href="/zombies/4" data-method="delete" rel="nofollow">delete</a>
+
+```
+
+That rails, by default, has unobtrusive JavaScript, that looks for this attributes
+```
+<form method="post" action="/zombies/4">
+  <input name="_method" values="delete">
+</form>
+```
+
+And from that, creates `form`, and `_method` is set as method (verb) by rails
 
 
 
