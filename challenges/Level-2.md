@@ -329,7 +329,7 @@ Zombie load (0.1ms) SELECT * FROM "zombies"
 
 ```
 
-
+##Has_many :through
 
 
 
