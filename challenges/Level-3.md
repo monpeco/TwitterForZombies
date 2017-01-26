@@ -71,8 +71,7 @@ class UserController < ApplicationController
     
 ```
 
-| Rails 1 |      | Rails 2+ |      |
-| Verb    | Noun | Verb     | Noun |
+| Verb (Rails 1)   | Noun | Verb (Rails 2+)    | Noun |
 |---------|------|----------|------|
 | GET  | /users/show/3    | GET     | /users/3 |
 | POST | /users/create    | POST    | /users   |
@@ -133,9 +132,19 @@ That rails, by default, has unobtrusive JavaScript, that looks for this attribut
 And from that, creates `form`, and `_method` is set as method (verb) by rails
 
 
+##Rake routes
 
+_*File*_: `app/config/routes.rb`
 
+```ruby
+resources :zombies
+```
+This creates all "RESTful" rails routes
 
+####To list all routes
+```ruby
+$ rake routes
+```
 
 
 
