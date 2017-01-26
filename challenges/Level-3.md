@@ -146,7 +146,20 @@ This creates all "RESTful" rails routes
 $ rake routes
 ```
 
+####Absolute path
 
+| Relative path | result | 
+|---------------|--------|
+| zombies_path  | /zombies |
+| new_zombie_path  | /zombies/new |
+
+| Absolute path | result | 
+|---------------|--------|
+| zombies_path_url  | http://localhost:3000/zombies |
+| new_zombie_path_url  | http://localhost:3000//zombies/new |
+
+
+Absolute path
 
 
 
