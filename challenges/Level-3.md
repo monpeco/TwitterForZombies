@@ -1,11 +1,3 @@
-##Name Scope
-
-_*File*_: ``
-
-```ruby
-
-```
-
 ##Understanding REST
  1. Resources (noum)
    * addressable through URI
