@@ -159,7 +159,6 @@ $ rake routes
 | new_zombie_path_url  | http://localhost:3000//zombies/new |
 
 
-Absolute path
 
 
 
