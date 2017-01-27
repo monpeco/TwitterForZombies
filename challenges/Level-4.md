@@ -3,7 +3,7 @@
 __Objetive__: Create email for desposition change and lost brain
 
 ```ruby
-$ rake generate mailer ZombieMailer decomp_change lost_brain
+$ rails generate mailer ZombieMailer decomp_change lost_brain
 ```
 
 _*File*_: `app/mailers/zombie_mailer.rb`
