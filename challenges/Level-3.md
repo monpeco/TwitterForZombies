@@ -142,6 +142,16 @@ This creates all "RESTful" rails routes
 ####To list all routes
 ```ruby
 $ rake routes
+
+     Prefix Verb   URI Pattern                 Controller#Action
+    zombies GET    /zombies(.:format)          zombies#index
+            POST   /zombies(.:format)          zombies#create
+ new_zombie GET    /zombies/new(.:format)      zombies#new
+edit_zombie GET    /zombies/:id/edit(.:format) zombies#edit
+     zombie GET    /zombies/:id(.:format)      zombies#show
+            PATCH  /zombies/:id(.:format)      zombies#update
+            PUT    /zombies/:id(.:format)      zombies#update
+            DELETE /zombies/:id(.:format)      zombies#destroy
 ```
 
 ####Absolute path
