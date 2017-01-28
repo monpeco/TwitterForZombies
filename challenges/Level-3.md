@@ -74,6 +74,12 @@ class UserController < ApplicationController
 
  
 ```ruby
+#to link to each action
+
+zombie = Zombie.find(2)
+```
+
+```ruby
 class UserController < ApplicationController
     
     # GET /users/3          <%= link_to 'show', zombie %>
@@ -82,12 +88,12 @@ class UserController < ApplicationController
     end
     
     # POST /users          <%= link_to 'create', zombie, method: :post %>
-    def create          # Typically it will be a form
+    def create              # Typically it will be a form
     
     end
     
     # PUT /users/3          <%= link_to 'update', zombie, method: :put %>
-    def update          # Typically it will be a form
+    def update              # Typically it will be a form
     
     end    
  
