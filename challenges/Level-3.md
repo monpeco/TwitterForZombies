@@ -198,6 +198,26 @@ If `@zombie` is saved to the database
   <input name="_method" type="hidden" value="put" />
 ```
 
+##Submit button
+
+Both create and update zombie form
+
+```ruby
+  <%= f.submit %>
+```
+
+If `@zombie` isn´t saved to the database yet 
+```ruby
+  <input name="commit" type="submit" value="Create Zombie" />
+```
+
+If `@zombie` is saved to the database
+```ruby
+  <input name="commit" type="submit" value="Update Zombie" />
+```
+
+
+
 
 
 
