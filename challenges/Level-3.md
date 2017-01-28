@@ -217,6 +217,27 @@ If `@zombie` is saved to the database
 ```
 
 
+##Text_field Helper
+
+When submitted, request parameters
+```ruby
+  :params => {:zombie => {:name => "Eric"}}
+```
+
+The text_field helper
+```ruby
+  <%= f.text_field :name %>
+```
+
+If `@zombie` isn´t saved to the database yet 
+```ruby
+  <input name="zombie[name]" size="30" type="text" />
+```
+
+If `@zombie` is already saved to the database
+```ruby
+  <input name="zombie[name]" size="30" type="text" value="Eric" />
+```
 
 
 
