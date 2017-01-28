@@ -177,6 +177,26 @@ How to use `link_to` with the path
 | new_zombie_path_url  | http://localhost:3000//zombies/new |
 
 
+##Creating a FORM
+
+Both create and update zombie form
+
+```ruby
+<%= form_for(@zombie) do |f| %>
+  ...
+<% end %>
+```
+
+If `@zombie` isn´t saved to the database yet 
+```ruby
+<form action="/zombie" method="post">
+```
+
+If `@zombie` is saved to the database
+```ruby
+<form action="/zombie/8" method="post">
+  <input name="_method" type="hidden" value="put" />
+```
 
 
 
