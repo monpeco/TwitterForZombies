@@ -154,6 +154,16 @@ edit_zombie GET    /zombies/:id/edit(.:format) zombies#edit
             DELETE /zombies/:id(.:format)      zombies#destroy
 ```
 
+How to use `link_to` with the path
+```ruby
+<%= link_to 'All Zombies', zombies_path %>
+<%= link_to 'New Zombie' , new_zombie_path %>
+<%= link_to 'Edit Zombie', edit_zombie_path(@zombie) %>
+<%= link_to 'Show Zombie', zombie_path(@zombie) %>
+<%= link_to 'Show Zombie', @zombie %>
+
+```
+
 ####Absolute path
 
 | Relative path | result | 
@@ -165,7 +175,6 @@ edit_zombie GET    /zombies/:id/edit(.:format) zombies#edit
 |---------------|--------|
 | zombies_path_url  | http://localhost:3000/zombies |
 | new_zombie_path_url  | http://localhost:3000//zombies/new |
-
 
 
 
