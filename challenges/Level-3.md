@@ -222,6 +222,7 @@ If `@zombie` is saved to the database
 When submitted, request parameters
 ```ruby
   :params => {:zombie => {:name => "Eric"}}
+  #Can be viewed from log in the log/ directory
 ```
 
 The text_field helper
