@@ -269,4 +269,34 @@ If `@zombie.name` has a validation error
 
 
 
+##Input helpers
+
+Render a multiline text area
+```ruby
+  <%= f.text_area :bio %>
+```
+
+Check box used for booleans
+```ruby
+  <%= f.check_box :rotting %>
+```
+
+List of radio buttons (without thir labels)
+```ruby
+  <%= f.radio_button :decomp, 'fresh', checked: true %>
+  <%= f.radio_button :decomp, 'rotting' %>
+  <%= f.radio_button :decomp, 'stale' %>
+```
+
+Select box with three options
+```ruby
+  <%= f.select :decomp, ['fresh', 'rotting', 'stale' ] %>
+```
+
+Select box with three options, each with numerical value
+```ruby
+  <%= f.select :decomp, [['fresh',1], ['rotting',2], ['stale',3] ] %>
+```
+
+
 
