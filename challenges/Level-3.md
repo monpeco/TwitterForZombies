@@ -240,6 +240,21 @@ If `@zombie` is already saved to the database
   <input name="zombie[name]" size="30" type="text" value="Eric" />
 ```
 
+If @zombie.name has a validation error
+```ruby
+  <div class="field_with_errors" >
+    <input name="zombie[name]" size="30" type="text" value="" />
+  </div>
+```
+
+
+
+
+
+
+
+
+
 
 
 
