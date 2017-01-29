@@ -240,7 +240,7 @@ If `@zombie` is already saved to the database
   <input name="zombie[name]" size="30" type="text" value="Eric" />
 ```
 
-If @zombie.name has a validation error
+If `@zombie.name` has a validation error
 ```ruby
   <div class="field_with_errors" >
     <input name="zombie[name]" size="30" type="text" value="" />
@@ -248,12 +248,24 @@ If @zombie.name has a validation error
 ```
 
 
+##Label Helper
 
 
+```ruby
+  <%= f.label :name %><br />
+```
 
+Will render
+```ruby
+  <label for="zombie_name">Name</label>
+```
 
-
-
+If `@zombie.name` has a validation error
+```ruby
+  <div class="field_with_errors" >
+    <label for="zombie_name">Name</label>
+  </div>
+```
 
 
 
