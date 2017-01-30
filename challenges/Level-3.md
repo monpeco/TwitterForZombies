@@ -298,5 +298,23 @@ Select box with three options, each with numerical value
   <%= f.select :decomp, [['fresh',1], ['rotting',2], ['stale',3] ] %>
 ```
 
-
+##Alternate text input helper
+```ruby
+  <%= f.password_field :password %>
+```
+```ruby
+  <%= f.number_field :price %>
+```
+```ruby
+  <%= f.range_field :quantity %>
+```
+```ruby
+  <%= f.email_field :email %>
+```
+```ruby
+  <%= f.url_field :website %>
+```
+```ruby
+  <%= f.telephone_field :mobile %>
+```
 
