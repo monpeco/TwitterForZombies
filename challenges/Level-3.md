@@ -335,7 +335,25 @@ With this routes, we will have to write:
  * `/tweets/2` to find a tweet
  * `/tweets?zombie_id=4` To find all zombie´s tweets
 
+_*Not very RESTful*_
+_*Tweets shouldn't exists without a zombie*_
 
+So, to make it RESTful we need to nest `tweets` inside `zombie`
+
+```ruby
+TwitterForZombies::Application.routes.draw do
+
+  resources :zombies do
+    resources :tweets
+  end
+  
+end
+```
+
+This give us access to differente url's
+
+ * `zombies/4/tweets/2` to find a tweet
+ * `/zombies/4/tweets` To find all zombie´s tweets
 
 
 
