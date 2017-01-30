@@ -318,3 +318,29 @@ Select box with three options, each with numerical value
   <%= f.telephone_field :mobile %>
 ```
 
+##Nested routes
+_*File*_: `app/config/routes.rb`
+
+```ruby
+TwitterForZombies::Application.routes.draw do
+
+  resources :zombies
+  resources :tweets
+
+end
+```
+
+With this routes, we will have to write:
+
+ * `/tweets/2` to find a tweet
+ * `/tweets?zombie_id=4` To find all zombie´s tweets
+
+
+
+
+
+
+
+
+
+
