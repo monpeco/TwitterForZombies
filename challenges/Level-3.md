@@ -355,10 +355,44 @@ This give us access to differente url's
  * `zombies/4/tweets/2` to find a tweet
  * `/zombies/4/tweets` To find all zombie´s tweets
 
+To make this work, we must:
+ 1. Update the controller
+ 2. Update all the links & from_for
+
+##Updating the controller for nesting
+`zombies/4/tweets/2`
+params = {:zombie_id => 4, :id => 2}
 
 
+```ruby
+class TweetsController < ApplicationController
+    before_filter :get_zombie
+    
+    def get_zombie
+      @zombie = Zombie.find(params[:zombie_id])
+    end
+    
+    def show
+      @tweet = @zombie.tweets.find(params[:id])
+    
+    end
+```
+
+`zombies/4/tweets`
+params = {:zombie_id => 4}
 
 
-
-
+```ruby
+class TweetsController < ApplicationController
+    before_filter :get_zombie
+    
+    def get_zombie
+      @zombie = Zombie.find(params[:zombie_id])
+    end
+    
+    def index
+      @tweets = @zombie.tweets
+    
+    end
+```
 
