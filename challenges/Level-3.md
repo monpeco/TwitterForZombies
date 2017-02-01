@@ -409,7 +409,7 @@ edit_zombie GET    /zombies/:id/edit(.:format) zombies#edit
             DELETE /zombies/:id(.:format)      zombies#destroy
 ```
 
-####Before tweets resource
+####After tweets resource
 ```ruby
      Prefix Verb   URI Pattern                 Controller#Action
      tweets GET    /tweets(.:format)           tweets#index
@@ -429,3 +429,24 @@ edit_zombie GET    /zombies/:id/edit(.:format) zombies#edit
             PUT    /zombies/:id(.:format)      zombies#update
             DELETE /zombies/:id(.:format)      zombies#destroy            
 ```            
+
+####After tweet nested to zombie
+```ruby
+           Prefix Verb   URI Pattern                                   Controller#Action
+    zombie_tweets GET    /zombies/:zombie_id/tweets(.:format)          tweets#index
+                  POST   /zombies/:zombie_id/tweets(.:format)          tweets#create
+ new_zombie_tweet GET    /zombies/:zombie_id/tweets/new(.:format)      tweets#new
+edit_zombie_tweet GET    /zombies/:zombie_id/tweets/:id/edit(.:format) tweets#edit
+     zombie_tweet GET    /zombies/:zombie_id/tweets/:id(.:format)      tweets#show
+                  PATCH  /zombies/:zombie_id/tweets/:id(.:format)      tweets#update
+                  PUT    /zombies/:zombie_id/tweets/:id(.:format)      tweets#update
+                  DELETE /zombies/:zombie_id/tweets/:id(.:format)      tweets#destroy
+          zombies GET    /zombies(.:format)                            zombies#index
+                  POST   /zombies(.:format)                            zombies#create
+       new_zombie GET    /zombies/new(.:format)                        zombies#new
+      edit_zombie GET    /zombies/:id/edit(.:format)                   zombies#edit
+           zombie GET    /zombies/:id(.:format)                        zombies#show
+                  PATCH  /zombies/:id(.:format)                        zombies#update
+                  PUT    /zombies/:id(.:format)                        zombies#update
+                  DELETE /zombies/:id(.:format)                        zombies#destroy
+```                   
