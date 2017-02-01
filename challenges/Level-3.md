@@ -132,7 +132,7 @@ And from that, creates `form`, and `_method` is set as method (verb) by rails
 
 ##Rake routes
 
-_*File*_: `app/config/routes.rb`
+_*File*_: `config/routes.rb`
 
 ```ruby
 resources :zombies
@@ -319,7 +319,7 @@ Select box with three options, each with numerical value
 ```
 
 ##Nested routes
-_*File*_: `app/config/routes.rb`
+_*File*_: `config/routes.rb`
 
 ```ruby
 TwitterForZombies::Application.routes.draw do
@@ -396,3 +396,15 @@ class TweetsController < ApplicationController
     end
 ```
 
+####Before tweets resource
+```ruby
+     Prefix Verb   URI Pattern                 Controller#Action
+    zombies GET    /zombies(.:format)          zombies#index
+            POST   /zombies(.:format)          zombies#create
+ new_zombie GET    /zombies/new(.:format)      zombies#new
+edit_zombie GET    /zombies/:id/edit(.:format) zombies#edit
+     zombie GET    /zombies/:id(.:format)      zombies#show
+            PATCH  /zombies/:id(.:format)      zombies#update
+            PUT    /zombies/:id(.:format)      zombies#update
+            DELETE /zombies/:id(.:format)      zombies#destroy
+```
