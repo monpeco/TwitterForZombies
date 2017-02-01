@@ -408,3 +408,24 @@ edit_zombie GET    /zombies/:id/edit(.:format) zombies#edit
             PUT    /zombies/:id(.:format)      zombies#update
             DELETE /zombies/:id(.:format)      zombies#destroy
 ```
+
+####Before tweets resource
+```ruby
+     Prefix Verb   URI Pattern                 Controller#Action
+     tweets GET    /tweets(.:format)           tweets#index
+            POST   /tweets(.:format)           tweets#create
+  new_tweet GET    /tweets/new(.:format)       tweets#new
+ edit_tweet GET    /tweets/:id/edit(.:format)  tweets#edit
+      tweet GET    /tweets/:id(.:format)       tweets#show
+            PATCH  /tweets/:id(.:format)       tweets#update
+            PUT    /tweets/:id(.:format)       tweets#update
+            DELETE /tweets/:id(.:format)       tweets#destroy
+    zombies GET    /zombies(.:format)          zombies#index
+            POST   /zombies(.:format)          zombies#create
+ new_zombie GET    /zombies/new(.:format)      zombies#new
+edit_zombie GET    /zombies/:id/edit(.:format) zombies#edit
+     zombie GET    /zombies/:id(.:format)      zombies#show
+            PATCH  /zombies/:id(.:format)      zombies#update
+            PUT    /zombies/:id(.:format)      zombies#update
+            DELETE /zombies/:id(.:format)      zombies#destroy            
+```            
