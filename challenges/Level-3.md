@@ -360,6 +360,9 @@ To make this work, we must:
  2. Update all the links & from_for
 
 ##Updating the controller for nesting
+
+Show => `Tweet` número 2 del `Zombie` número 4
+
 `zombies/4/tweets/2`
 params = {:zombie_id => 4, :id => 2}
 
@@ -377,6 +380,8 @@ class TweetsController < ApplicationController
     
     end
 ```
+
+Show => todos los `Tweet` del `Zombie` número 4
 
 `zombies/4/tweets`
 params = {:zombie_id => 4}
@@ -450,3 +455,7 @@ edit_zombie_tweet GET    /zombies/:zombie_id/tweets/:id/edit(.:format) tweets#ed
                   PUT    /zombies/:id(.:format)                        zombies#update
                   DELETE /zombies/:id(.:format)                        zombies#destroy
 ```                   
+
+
+
+
