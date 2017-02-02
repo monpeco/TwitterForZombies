@@ -471,11 +471,25 @@ edit_zombie_tweet GET    /zombies/:zombie_id/tweets/:id/edit(.:format) tweets#ed
 <%= link_to "Show" , [@zombie, tweet] %>
 
 <%= link_to "Destroy" , [@zombie, tweet], method: :delete %>
-
-
 ```
 
+##Links in action
 
+_*File*_: `app/views/tweets/index.html.erb`
+
+```ruby
+<% @tweets.each do |tweet| %>
+  <tr>
+    <td><%= tweet.body %></td>
+    <td><%= link_to 'Show', [@zombie, tweet] %></td>
+    <td><%= link_to 'Edit', edit_zombie_tweet_path(@zombie, tweet) %></td>
+    <td><%= link_to 'Destroy', [@zombie, tweet], method: :delete %></td>
+  </tr>
+<% end %>
+
+<%= link_to 'New Tweet', new_zombie_tweet_path(@zombie, tweet) %>
+
+```
 
 
 
