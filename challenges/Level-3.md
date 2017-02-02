@@ -457,5 +457,28 @@ edit_zombie_tweet GET    /zombies/:zombie_id/tweets/:id/edit(.:format) tweets#ed
 ```                   
 
 
+####Links of the new routes
+
+```ruby
+<%= link_to "{#@zombie.name}'s Tweets" , zombie_tweet_path(@zombie) %>
+
+<%= link_to "New Tweet" , new_zombie_tweet_path(@zombie) %>
+
+<%= link_to "Edit" , edit_zombie_tweet_path(@zombie, tweet) %>
+
+<%= link_to "Show" , zombie_tweet_path(@zombie, tweet) %>
+
+<%= link_to "Show" , [@zombie, tweet] %>
+
+<%= link_to "Destroy" , [@zombie, tweet], method: :delete %>
+
+
+```
+
+
+
+
+
+
 
 
