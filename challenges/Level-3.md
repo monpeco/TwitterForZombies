@@ -537,3 +537,32 @@ _*File*_: `app/controllers/tweets_controller.rb`
     end
   end
 ```
+
+###Partials
+
+_*File*_: `app/views/tweets/_form.html.erb`
+
+```ruby
+<%= form_for([@zombie, tweet]) do |f|  %>
+```
+
+
+_*File*_: `app/views/tweets/new.html.erb`
+
+```ruby
+<h1>New tweet<h1>
+
+<%= render 'form'  %>
+
+<%= link_to 'Back', zombie_tweets_path(@zombie)  %>
+```
+
+
+_*File*_: `app/views/tweets/edit.html.erb`
+
+```ruby
+<h1>Edit tweet<h1>
+
+<%= render 'form'  %>
+
+```
