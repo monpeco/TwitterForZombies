@@ -499,8 +499,41 @@ _*File*_: `app/views/tweets/_form.html.erb`
 
 ```
 
+###Updating routes in the controller
+
+_*File*_: `app/controllers/tweets_controller.rb`
+
+####Original
+```ruby
+  def create
+    @tweet = Tweet.new(tweet_params)
+
+    respond_to do |format|
+      if @tweet.save
+        format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
+        format.json { render :show, status: :created, location: @tweet }
+      else
+        format.html { render :new }
+        format.json { render json: @tweet.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+```
 
 
+####Modificacion
+```ruby
+  def create
+    @tweet = @zombie.tweets.new(tweet_params)
 
-
-
+    respond_to do |format|
+      if @tweet.save
+        format.html { redirect_to [@zombie, @tweet], notice: 'Tweet was successfully created.' }
+        format.json { render [@zombie, @tweet], status: :created, location:  [@zombie, @tweet] }
+      else
+        format.html { render :new }
+        format.json { render json: @tweet.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+```
