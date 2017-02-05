@@ -492,6 +492,14 @@ _*File*_: `app/views/tweets/index.html.erb`
 ```
 
 
+_*File*_: `app/views/tweets/_form.html.erb`
+
+```ruby
+<%= form_for([@zombie, tweet]) do |f|  %>
+
+```
+
+
 
 
 
