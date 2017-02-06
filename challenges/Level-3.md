@@ -566,3 +566,24 @@ _*File*_: `app/views/tweets/edit.html.erb`
 <%= render 'form'  %>
 
 ```
+
+
+###Aditional view helpers
+
+```ruby
+<% @tweets.each do |tweet|  %>
+  <div id="<%= tweet.id  %>" class="tweet">
+    <%= tweet.body  %>
+  </div>
+<% end  %>
+```
+
+####Use of the div_for helper
+```ruby
+<% @tweets.each do |tweet|  %>
+  <%= div_for tweet do %>
+    <%= tweet.body  %>
+  <% end %>
+<% end  %>
+```
+It's calling the `dom_id(@tweet)` and that is how It gets the `id` of the `tweet`
