@@ -599,3 +599,20 @@ I see <%= pluralize(Zombie.count, "zombie") %>
 His name was <%= @zombie.name.titleize %>
 
 ```
+
+
+```ruby
+Ash's zombie roles are <%= @role_names.to_sentence %>
+# => Ash's zombie roles are Capitan, Soldier, and Brain Taster
+
+He was buried alive <%= time_ago_in_words @zombie.created_at %> ago
+# => He was buried alive 2 days ago
+
+Price is <%= number_to_currency 13.5%> 
+# => Price is $ 13.5
+
+Ash is <%= number_to_human 12446513254 %> years old
+# => Ash is 12.4 Billion years old
+
+```
+
