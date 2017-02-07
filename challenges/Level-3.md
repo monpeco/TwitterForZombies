@@ -596,6 +596,6 @@ It's calling the `dom_id(@tweet)` and that is how It gets the `id` of the `tweet
 
 I see <%= pluralize(Zombie.count, "zombie") %>
 
-I see <%= pluralize(Zombie.count, "zombie") %>
+His name was <%= @zombie.name.titleize %>
 
 ```
