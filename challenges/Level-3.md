@@ -587,3 +587,15 @@ _*File*_: `app/views/tweets/edit.html.erb`
 <% end  %>
 ```
 It's calling the `dom_id(@tweet)` and that is how It gets the `id` of the `tweet`
+
+####Adicional view helpers (string)
+```ruby
+<%= truncate("I need brains", :length => 10)  %>
+
+<%= truncate("I need brains", :length => 10, :separator => ' ')  %>
+
+I see <%= pluralize(Zombie.count, "zombie") %>
+
+I see <%= pluralize(Zombie.count, "zombie") %>
+
+```
