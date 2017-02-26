@@ -26,3 +26,12 @@ t.save
 t = Tweet.find(2)
 t.destroy
 
+#Alternative syntax
+t = Tweet.new(
+    status: "This brain is so delicious",
+    zombie_id: 1)
+t.save
+
+t = Tweet.create(
+    status: "This brain is so delicious",
+    zombie_id: 1)
