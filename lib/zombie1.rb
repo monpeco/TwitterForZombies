@@ -33,5 +33,18 @@ t = Tweet.new(
 t.save
 
 t = Tweet.create(
-    status: "This brain is so delicious",
+    status: "I've just ate a bad brain",
     zombie_id: 1)
+    
+#Recover from db
+Tweet.first
+Tweet.last
+Tweet.all
+
+Tweet.count
+Tweet.order(:status)
+Tweet.limit(2)
+Tweet.where(body: "The body")
+
+#Method channing
+Tweet.where(zombie_id: 1).order(:status).limit(2)
