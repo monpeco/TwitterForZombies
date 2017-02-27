@@ -48,3 +48,27 @@ Tweet.where(body: "The body")
 
 #Method channing
 Tweet.where(zombie_id: 1).order(:status).limit(2)
+
+#Update a zombie
+t = Tweet.find(2)
+t.zombie = "EyeballChomper"
+t.save
+
+t = Tweet.find(2)
+t.attributes = {
+    status: "This brain is so delicious",
+    zombie_id: 1 }
+t.save
+
+t = Tweet.find(2)
+t.update(
+    status: "This brain is so delicious",
+    zombie_id: 1)
+
+#Delete
+t = Tweet.find(2)
+t.destroy
+
+t = Tweet.find(2).destroy
+
+Tweet.destroy_all
