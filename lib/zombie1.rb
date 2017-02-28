@@ -72,3 +72,25 @@ t.destroy
 t = Tweet.find(2).destroy
 
 Tweet.destroy_all
+
+
+#Aditionals
+#From http://guides.rubyonrails.org/active_record_querying.html
+
+#Retrieving a Single Object
+t = Tweet.take          #take a record (no particular order)
+
+t = Tweet.take(2)       #take 2 records (no particular order)
+
+t = Tweet.take!         #take! behaves equal, but raise a ActiveRecord::RecordNotFound if no matching record is found
+
+Tweet.find_by status: 'I love brains'       #This two are equivalents
+Tweet.where(status: 'I love brains').take
+
+Tweet.find_by! status: 'I love brains'       #Same but raise a ActiveRecord::RecordNotFound if no matching record is found
+Tweet.where(status: 'I love brains').take!
+
+# This is very inefficient when has thousands of rows.
+Tweet.all.each do |tweet|
+  p tweet.status
+end
