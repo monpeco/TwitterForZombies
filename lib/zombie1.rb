@@ -110,3 +110,21 @@ Tweet.where(status: 'I love brains').take!
 Tweet.all.each do |tweet|
   p tweet.status
 end
+
+
+#Conditions
+Tweet.where(status: "McDonalds is so TERRIFIC")
+
+params = "I love brains"
+Tweet.where("status = ?", params)
+
+status = "Im hungry"
+body = "This is a long body"
+Tweet.where("status = ? and body = ?", status, body) 
+
+params1="2017-02-28 12:31:48"
+params2="2017-02-28 12:51:48"
+Tweet.where("created_at >= :start_date AND created_at <= :end_date",
+  {start_date: params1, end_date: params2})
+
+  
