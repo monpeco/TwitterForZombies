@@ -127,4 +127,33 @@ params2="2017-02-28 12:51:48"
 Tweet.where("created_at >= :start_date AND created_at <= :end_date",
   {start_date: params1, end_date: params2})
 
-  
+
+Tweet.where(zombie_id: true)        #A boolean is interpreted as a number
+                                    #SELECT "tweets".* FROM "tweets" WHERE "tweets"."zombie_id" = 1
+
+Tweet.where('zombie_id' => true)    #It also can be a string
+
+#Range Conditions
+Tweet.where(created_at: (Time.now.midnight - 2.day)..Time.now.midnight) 
+ #SELECT "tweets".* FROM "tweets" WHERE ("tweets"."created_at" BETWEEN '2017-02-26 00:00:00.000000' AND '2017-02-28 00:00:00.000000')
+ 
+#Subset conditions
+Tweet.where(id: [1,3,5])
+#SELECT "tweets".* FROM "tweets" WHERE "tweets"."id" IN (1, 3, 5)
+
+Tweet.where.not(id: [1,3,5])
+#SELECT "tweets".* FROM "tweets" WHERE ("tweets"."id" NOT IN (1, 3, 5))
+
+#ordering
+Tweet.order(:status)
+#SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."status" ASC
+
+Tweet.order(status: :desc)
+# SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."status" DESC
+
+Tweet.order(zombie_id: :desc, status: :asc)
+# SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."zombie_id" DESC, "tweets"."status" ASC
+
+Tweet.order(zombie_id: :desc).order(status: :asc)
+# SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."zombie_id" DESC, "tweets"."status" ASC
+
