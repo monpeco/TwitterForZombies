@@ -75,6 +75,22 @@ Tweet.destroy_all
 
 
 #Aditionals
+
+#To retrieve all models
+ActiveRecord::Base.connection.tables.map do |model|
+  model.capitalize.singularize.camelize
+end
+# => ["SchemaMigration", "Zombie", "Tweet", "Brain"] 
+
+ActiveRecord::Base.connection.tables
+# => ["schema_migrations", "zombies", "tweets", "brains"] 
+
+#To retrive columns names of a Model
+Tweet.column_names
+# => ["id", "status", "body", "zombie_id", "created_at", "updated_at"] 
+Brain.column_names
+# => ["id", "zombie_id", "status", "flavor", "created_at", "updated_at"] 
+
 #From http://guides.rubyonrails.org/active_record_querying.html
 
 #Retrieving a Single Object
