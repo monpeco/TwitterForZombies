@@ -161,3 +161,12 @@ Tweet.order(zombie_id: :desc).order(status: :asc)
 Tweet.select(:id, :status)
 # SELECT "tweets"."id", "tweets"."status" FROM "tweets"
 
+#Joining Tables
+
+Category.joins(:articles)
+
+
+#Validations
+class Zombie < ActiveRecord::Base
+    validates :name, presence: true
+end
