@@ -84,3 +84,7 @@ Generates:
         add_reference :products, :user, index: true, foreign_key: true
       end
     end
+
+##When Helpers aren't Enough
+
+    Product.connection.execute("UPDATE products SET price = 'free' WHERE 1=1")
