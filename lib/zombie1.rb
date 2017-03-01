@@ -170,3 +170,14 @@ Category.joins(:articles)
 class Zombie < ActiveRecord::Base
     validates :name, presence: true
 end
+
+#note: run reload! to load the validations
+
+#updates
+Zombie.update_all "rotting = 1"
+
+#To check everyone
+Zombie.all.each do |zombie|
+  print zombie.name
+  puts zombie.rotting
+end
