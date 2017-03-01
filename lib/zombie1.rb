@@ -157,3 +157,7 @@ Tweet.order(zombie_id: :desc, status: :asc)
 Tweet.order(zombie_id: :desc).order(status: :asc)
 # SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."zombie_id" DESC, "tweets"."status" ASC
 
+#Selecting Specific Fields
+Tweet.select(:id, :status)
+# SELECT "tweets"."id", "tweets"."status" FROM "tweets"
+
