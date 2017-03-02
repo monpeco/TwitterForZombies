@@ -52,3 +52,15 @@ You can also run these validations on your own. `valid?` triggers your validatio
      z.errors.messages
     => {:name=>["can't be blank"]} 
     
+
+##2 Validation Helpers
+
+####2.1 acceptance
+
+    validates :rotting, acceptance: true
+    validates :email, acceptance: true
+    
+###To recover all validations
+    
+    Zombie.validators
+
