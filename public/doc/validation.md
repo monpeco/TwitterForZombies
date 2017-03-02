@@ -75,4 +75,17 @@ You can also run these validations on your own. `valid?` triggers your validatio
     z.errors.messages
     # => {:rotting=>["no puede estar en false o nil"]} 
 
+###exclusion
+
+    validates :bio, exclusion: { in: %w(www us ca jp), message: "%{value} is reserved." }
+
+    z = Zombie.new(bio: "www")
+    #<Zombie id: nil, name: nil, bio: "www", created_at: nil, updated_at: nil, email: nil, rotting: nil> 
+    #
+    z.save
+    # => false 
+    #
+    z.errors.messages
+    # => {:name=>["can't be blank"], :rotting=>["no puede estar en false o nil"], :bio=>["www is reserved."]} 
+
 
