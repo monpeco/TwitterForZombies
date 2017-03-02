@@ -1,5 +1,7 @@
 #1 Validations
 
+> http://guides.rubyonrails.org/active_record_validations.html
+
     z = Zombie.new(name: "Hilary", bio: "My life was so great... not!")
     # => #<Zombie id: nil, name: "Hilary", bio: "My life was so great... not!", created_at: nil, updated_at: nil, email: nil, rotting: nil> 
     z.new_record?
