@@ -1,5 +1,5 @@
 class Zombie < ActiveRecord::Base
     validates :name, presence: true
-    validates :rotting, acceptance: true
-    validates :email, acceptance: true
+    validates :rotting, inclusion: { in: [true], message: 'no puede estar en false o nil' }
 end
+

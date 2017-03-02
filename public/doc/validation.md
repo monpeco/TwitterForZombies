@@ -63,4 +63,16 @@ You can also run these validations on your own. `valid?` triggers your validatio
 ###To recover all validations
     
     Zombie.validators
+    
+###Inlusion (not working for me acceptance with bool)
+
+    z = Zombie.new(bio: "This is it")
+    # => #<Zombie id: nil, name: nil, bio: "This is it", created_at: nil, updated_at: nil, email: nil, rotting: nil> 
+    #
+    z.save
+    # => false 
+    # 
+    z.errors.messages
+    # => {:rotting=>["no puede estar en false o nil"]} 
+
 
