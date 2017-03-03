@@ -66,6 +66,8 @@ You can also run these validations on your own. `valid?` triggers your validatio
     
 ###Inlusion (not working for me acceptance with bool)
 
+    validates :rotting, inclusion: { in: [true], message: 'no puede estar en false o nil' }
+
     z = Zombie.new(bio: "This is it")
     # => #<Zombie id: nil, name: nil, bio: "This is it", created_at: nil, updated_at: nil, email: nil, rotting: nil> 
     #
