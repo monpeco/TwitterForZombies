@@ -49,4 +49,121 @@
     DELETE FROM "zombies" WHERE "zombies"."id" = ?  [["id", 5]]
     #   => #<Zombie id: 5, name: "Mark", bio: "This is so cold", created_at: "2017-03-01 02:41:56", updated_at: "2017-03-01 12:44:44", email: "another@rotting.com", rotting: true>
     
+##2 The Types of Associations
     
+    belongs_to
+    has_one
+    has_many
+    has_many :through
+    has_one :through
+    has_and_belongs_to_many
+    
+book model this way
+
+    class Book < ApplicationRecord
+      belongs_to :author
+    end
+
+
+The corresponding migration 
+
+    class CreateBooks < ActiveRecord::Migration[5.0]
+      def change
+        create_table :authors do |t|
+          t.string :name
+          t.timestamps
+        end
+     
+        create_table :books do |t|
+          t.belongs_to :author, index: true
+          t.datetime :published_at
+          t.timestamps
+        end
+      end
+    end
+    
+####2.3 The has_many Association
+
+class Author < ApplicationRecord
+  has_many :books
+end
+
+The corresponding migration:
+
+    class CreateAuthors < ActiveRecord::Migration[5.0]
+      def change
+        create_table :authors do |t|
+          t.string :name
+          t.timestamps
+        end
+     
+        create_table :books do |t|
+          t.belongs_to :author, index: true
+          t.datetime :published_at
+          t.timestamps
+        end
+      end
+    end
+
+
+####2.4 The has_many :through Association
+
+For example, consider a medical practice where patients make appointments to see physicians. The relevant association declarations could look like this:
+
+    class Physician < ApplicationRecord
+      has_many :appointments
+      has_many :patients, through: :appointments
+    end
+     
+    class Appointment < ApplicationRecord
+      belongs_to :physician
+      belongs_to :patient
+    end
+     
+    class Patient < ApplicationRecord
+      has_many :appointments
+      has_many :physicians, through: :appointments
+    end
+
+The corresponding migration might look like this:
+
+    class CreateAppointments < ActiveRecord::Migration[5.0]
+      def change
+        create_table :physicians do |t|
+          t.string :name
+          t.timestamps
+        end
+     
+        create_table :patients do |t|
+          t.string :name
+          t.timestamps
+        end
+     
+        create_table :appointments do |t|
+          t.belongs_to :physician, index: true
+          t.belongs_to :patient, index: true
+          t.datetime :appointment_date
+          t.timestamps
+        end
+      end
+    end
+
+The has_many `:through` association is also useful for setting up "shortcuts" through nested `has_many` associations. For example, if a document has many sections, and a section has many paragraphs, you may sometimes want to get a simple collection of all paragraphs in the document. You could set that up this way:
+
+    class Document < ApplicationRecord
+      has_many :sections
+      has_many :paragraphs, through: :sections
+    end
+     
+    class Section < ApplicationRecord
+      belongs_to :document
+      has_many :paragraphs
+    end
+     
+    class Paragraph < ApplicationRecord
+      belongs_to :section
+    end
+    With through: :sections specified, Rails will now understand:
+    
+    @document.paragraphs
+
