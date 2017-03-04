@@ -90,4 +90,14 @@ You can also run these validations on your own. `valid?` triggers your validatio
     z.errors.messages
     # => {:name=>["can't be blank"], :rotting=>["no puede estar en false o nil"], :bio=>["www is reserved."]} 
 
+####Validates minimun
+
+    b = Zombie.new(name: "X", rotting: true)
+    #=> #<Zombie id: nil, name: "X", bio: nil, created_at: nil, updated_at: nil, email: nil, rotting: true> 
+    b.save
+    # => false 
+    b.errors.messages
+    # => {:name=>["is too short (minimum is 2 characters)"]} 
+
+
 
