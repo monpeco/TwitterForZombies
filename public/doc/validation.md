@@ -99,5 +99,10 @@ You can also run these validations on your own. `valid?` triggers your validatio
     b.errors.messages
     # => {:name=>["is too short (minimum is 2 characters)"]} 
 
-
+    z = Zombie.new(name: "Alison Smith", rotting: true)
+    => #<Zombie id: nil, name: "Alison Smith", bio: nil, created_at: nil, updated_at: nil, email: nil, rotting: true> 
+    z.save
+    => false 
+    z.errors.messages
+     => {:name=>["is too long (maximum is 5 characters)"]} 
 
