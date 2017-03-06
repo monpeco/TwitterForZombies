@@ -5,5 +5,9 @@ class Zombie < ActiveRecord::Base
     validates :bio, exclusion: { in: %w(www us ca jp), message: "%{value} is reserved." }
     
     has_many :tweets, dependent: :destroy
+    
+    include ActiveModel::Validations
+    validates_with EmailValidator, :field => :email
+
 end
 
