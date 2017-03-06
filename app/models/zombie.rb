@@ -6,8 +6,7 @@ class Zombie < ActiveRecord::Base
     
     has_many :tweets, dependent: :destroy
     
-    include ActiveModel::Validations
-    validates_with EmailValidator, :field => :email
-
+    validates :email, presence: true, email: true
+    
 end
 
