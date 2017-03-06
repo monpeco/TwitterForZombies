@@ -106,3 +106,23 @@ You can also run these validations on your own. `valid?` triggers your validatio
     z.errors.messages
      => {:name=>["is too long (maximum is 5 characters)"]} 
 
+
+    z = Zombie.new(name: "Joe", rotting: true, email: "hjhjh")
+    # => #<Zombie id: nil, name: "Joe", bio: nil, created_at: nil, updated_at: nil, email: "hjhjh", rotting: true> 
+    #
+    z.valid?                                                                                                                                                                         
+    # => false 
+    #
+    z.errors.messages
+    # => {:base=>["provide a proper email"]} 
+
+
+    z = Zombie.new(name: "Joe", rotting: true, email: "example@example.com")
+    # => #<Zombie id: nil, name: "Joe", bio: nil, created_at: nil, updated_at: nil, email: "example@example.com", rotting: true> 
+    #
+    z.valid?
+    # => true
+    #
+    z.save
+    INSERT INTO "zombies" ("name", "rotting", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Joe"], ["rotting", "t"], ["email", "example@example.com"], ["created_at", "2017-03-06 14:09:06.478259"], ["updated_at", "2017-03-06 14:09:06.478259"]]
+    # => true 
