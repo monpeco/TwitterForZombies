@@ -126,3 +126,13 @@ You can also run these validations on your own. `valid?` triggers your validatio
     z.save
     INSERT INTO "zombies" ("name", "rotting", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Joe"], ["rotting", "t"], ["email", "example@example.com"], ["created_at", "2017-03-06 14:09:06.478259"], ["updated_at", "2017-03-06 14:09:06.478259"]]
     # => true 
+    
+####The rails 3 way to add custom validation
+
+    include ActiveModel::Validations
+    
+    class TitleValidator < ActiveModel::EachValidator
+      def validate_each(record, attribute, value)
+        record.errors.add attribute, "must start with 'the'" unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i 
+      end
+    end
