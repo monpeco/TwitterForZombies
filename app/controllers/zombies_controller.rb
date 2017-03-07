@@ -61,6 +61,10 @@ class ZombiesController < ApplicationController
     end
   end
 
+  def other_option
+    Zombie.all.map { |g| [g.name.titleize , g.id.to_s] } 
+  end
+    
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_zombie
