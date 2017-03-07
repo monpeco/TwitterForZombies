@@ -136,3 +136,11 @@ You can also run these validations on your own. `valid?` triggers your validatio
         record.errors.add attribute, "must start with 'the'" unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i 
       end
     end
+
+####Define a controller method and call it from console
+
+    ZombiesController.new.other_option
+    SELECT "zombies".* FROM "zombies"
+    # => [["Caike S", "1"], ["Ash", "2"], ["Bob", "3"], ["Mike", "4"], ["Alice", "6"], ["Joseph", "7"], ["Hilary", "8"], ["Doug", "9"], ["Romano", "10"], ["Patton", "11"], ["June", "12"], ["Bi", "13"], ["Joe", "14"]] 
+ 
+ 
