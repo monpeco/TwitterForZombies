@@ -16,6 +16,7 @@
 
 <% zo = @zombie.id %>
 <p>The brain: <%= Brain.where(zombie_id: zo).first.status %></p>
+<p>Go to all <%= link_to "Zombies", zombies_path,  data: { confirm: 'Are you sure?'} %></p>
 
 <%# level 3 example code%>
 
