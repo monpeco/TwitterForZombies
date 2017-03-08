@@ -11,5 +11,11 @@
 </p>
 
 
+<%# level 3 example code%>
+<% tweet = Tweet.find(3) %>
+<h2><%= tweet.status %></h2>
+<p>Posted by <%= tweet.zombie.name %></p>
+<%# level 3 example code%>
+
 <%= link_to 'Edit', edit_zombie_path(@zombie) %> |
 <%= link_to 'Back', zombies_path %>
