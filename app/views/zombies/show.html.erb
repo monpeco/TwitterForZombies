@@ -10,12 +10,15 @@
   <%= @zombie.bio %>
 </p>
 
+<%# level 3 example code%>
+<% brain = Brain.find(1) %>
+<h2><%= brain.flavor %></h2>
+
+<% zo = @zombie.id %>
+<p>The brain: <%= Brain.where(zombie_id: zo).first.status %></p>
 
 <%# level 3 example code%>
-<% tweet = Tweet.find(3) %>
-<h2><%= tweet.status %></h2>
-<p>Posted by <%= tweet.zombie.name %></p>
-<%# level 3 example code%>
 
-<%= link_to 'Edit', edit_zombie_path(@zombie) %> |
+
+<%= link_to 'Edit', edit_zombie_path(@zombie) %>
 <%= link_to 'Back', zombies_path %>
