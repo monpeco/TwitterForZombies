@@ -53,3 +53,14 @@ Because the homepage is usually the most important route, and routes are
 prioritized in the order they appear, the root route should usually be 
 the first in your routes file.
 
+###Redirection
+
+You can perform redirection in Rails routes as follows:
+
+    get '/stories', to: redirect('/posts')
+
+You can also redirect all unknown routes to a given path:
+
+    match '*path' => redirect('/'), via: :get
+    # or
+    get '*path' => redirect('/')
