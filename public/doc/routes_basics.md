@@ -37,3 +37,19 @@ For concerns to be meaningful, there must be multiple resources that utilize the
     resource :blog do
       concerns :commentable
 end
+
+###Root route
+You can add a home page route to your app with the root method.
+
+    # config/routes.rb
+    Rails.application.routes.draw do
+      root "zombies#index"
+      
+      # equivalent to:
+      # get "/", "application#index"  
+    end
+
+Because the homepage is usually the most important route, and routes are 
+prioritized in the order they appear, the root route should usually be 
+the first in your routes file.
+

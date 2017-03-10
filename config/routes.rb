@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "zombies#index" # get "/", "zombies#index"
+  
   resources :zombies do
     resources :tweets
   end
