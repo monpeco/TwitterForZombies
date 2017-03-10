@@ -329,6 +329,21 @@ Zombie load (0.1ms) SELECT * FROM "zombies"
 
 ```
 
+###.destroy_all
+
+    b = Brain.all
+    # SELECT "brains".* FROM "brains"
+    # => #<ActiveRecord::Relation [#<Brain id: 1, zombie_id: 1, status: "Empirical-Animate", flavor: "Candy", created_at: "2017-03-08 02:49:14", updated_at: "2017-03-08 02:49:14">]> 
+    #
+    b.destroy_all
+    #
+    # DELETE FROM "brains" WHERE "brains"."id" = ?  [["id", 1]]
+    # => [#<Brain id: 1, zombie_id: 1, status: "Empirical-Animate", flavor: "Candy", created_at: "2017-03-08 02:49:14", updated_at: "2017-03-08 02:49:14">] 
+    #
+    b = Brain.all
+    #SELECT "brains".* FROM "brains"
+    # => #<ActiveRecord::Relation []> 
+
 ##Has_many :through
 
 
