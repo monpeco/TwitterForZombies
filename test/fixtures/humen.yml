@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  power: MyString
+  age: 1
+  description: MyText
+  fighting: false
+
+two:
+  name: MyString
+  power: MyString
+  age: 1
+  description: MyText
+  fighting: false
