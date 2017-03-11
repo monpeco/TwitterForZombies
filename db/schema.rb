@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208022741) do
+ActiveRecord::Schema.define(version: 20170311223830) do
 
   create_table "brains", force: :cascade do |t|
     t.integer  "zombie_id"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20170208022741) do
     t.string   "flavor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "humen", force: :cascade do |t|
+    t.string   "name"
+    t.string   "power"
+    t.integer  "age"
+    t.text     "description"
+    t.boolean  "fighting"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "tweets", force: :cascade do |t|
