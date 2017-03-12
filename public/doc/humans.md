@@ -60,6 +60,57 @@ Or in this way
     end 
     
     
+###Using namespaces to keep controller organized
+When site and api share the same code based
+
+    #file: config/routes.rb
+
+    constrains subdomain: "api" do
+      namespace :api do
+        resources :zombies
+        resources :human
+      end
+    end 
+
+This inplies that the `zombies_controller.rb`
+needs to go inside the `api` module
+
+the file must be:
+
+    app/controllers/api/zombies_controller.rb
+    
+and its contents
+
+    module Api
+      class ZombiesController < ApplicationController
+      end
+    end
+  
+###Removig duplication from the URL
+
+    #file: config/routes.rb
+
+    constrains subdomain: "api" do
+      namespace :api, path: "/" do
+        ...
+      end
+    end 
+  
+###Shorter syntax
+
+    #file: config/routes.rb
+
+    namespace :api, path: "/", constrains: { subdomain: "api" } do
+    ...
+    end
+
+  
+  
+
+
+
+
+
 
 
 
