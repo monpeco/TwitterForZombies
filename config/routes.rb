@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "zombies#index" # get "/", "zombies#index"
+  root "humen#index" # get "/", "zombies#index"
 
   resources :zombies do
     resources :tweets
@@ -8,12 +8,7 @@ Rails.application.routes.draw do
 
   resources :humen
   
-  #with_options only: :index do |list_only|
-  #  list_only.resources :zombie
-  #  list_only.resources :humen
-  #  list_only.resources :other
-  #    ...
-  #  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
