@@ -1,10 +1,13 @@
 # lib/url_api.rb
 require 'httparty'
 
+# irb
+# require "./url_api"
 # u = UrlApi.new.unique_url
 
 class UrlApi
-  API_URL = 'https://api.github.com/users/monpeco'
+  API_URL = 'https://api.github.com/users/monpeco?fields=login'
+  #API_URL = 'https://graph.facebook.com/youtube?fields=error'
 
   def unique_url
     response = HTTParty.get(API_URL)
