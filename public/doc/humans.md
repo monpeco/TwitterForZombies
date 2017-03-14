@@ -104,7 +104,11 @@ and its contents
     ...
     end
 
-  
+###Check the fields of a model
+Just type:
+    Human
+    => Human(id: integer, name: string, power: string, age: integer, description: text, fighting: boolean, created_at: datetime, updated_at: datetime) 
+
   
 
 
