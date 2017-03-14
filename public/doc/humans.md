@@ -104,15 +104,36 @@ and its contents
     ...
     end
 
+
 ###Check the fields of a model
+
 Just type:
+
     Human
     => Human(id: integer, name: string, power: string, age: integer, description: text, fighting: boolean, created_at: datetime, updated_at: datetime) 
 
   
+###Using Find_by_attribute
 
+This recover a record by just using a dynamic finder that makes use of Ruby’s `method_missing` functionality:
 
+    h = Human.find_by_power("Operations")
+     => #<Human id: 1, name: "Pedro", power: "Operations", age: 45, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-12 01:00:22"> 
+    #
+    #New syntax
+    h = Human.find_by(power: "Operations")
+     => #<Human id: 1, name: "Pedro", power: "Operations", age: 45, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-12 01:00:22"> 
 
+###Use Update_attributes
+
+    h = Human.find_by(power: "Operations")
+     => #<Human id: 1, name: "Pedro", power: "Operations", age: 45, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-12 01:00:22"> 
+    #
+    h.update_attributes(age: 30)
+      SQL (3.4ms)  UPDATE "humen" SET "age" = ?, "updated_at" = ? WHERE "humen"."id" = ?  [["age", 30], ["updated_at", "2017-03-14 16:50:47.767813"], ["id", 1]]
+    #
+    h = Human.find_by(power: "Operations")
+     => #<Human id: 1, name: "Pedro", power: "Operations", age: 30, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-14 16:50:47"> 
 
 
 
