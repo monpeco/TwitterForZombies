@@ -168,10 +168,15 @@ This recover a record by just using a dynamic finder that makes use of Ruby’s 
     #  SELECT  1 AS one FROM "humen" WHERE "humen"."name" = ? LIMIT 1  [["name", "Sting"]]
     # => true 
 
+###Find ignores text after an ':id-' 
+    Human.find("2-sdfasdfasdf")
+    # SELECT  "humen".* FROM "humen" WHERE "humen"."id" = ? LIMIT 1  [["id", 2]]
+    # => #<Human id: 2, name: "Waka", power: "Resistence", age: 26, description: "Great!!", fighting: false, created_at: "2017-03-13 12:05:43", updated_at: "2017-03-13 12:05:43"> 
 
+###Find with set and interval
 
-
-
+    Human.find(1,2,3)   # SELECT "humen".* FROM "humen" WHERE "humen"."id" IN (1, 2, 3)
+    Human.find([2,5])   # SELECT "humen".* FROM "humen" WHERE "humen"."id" IN (2, 5)
 
 
 
