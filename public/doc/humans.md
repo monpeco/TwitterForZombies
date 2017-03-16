@@ -148,14 +148,25 @@ This recover a record by just using a dynamic finder that makes use of Ruby’s 
     h = Human.exists?(['name LIKE ?', "%#{query}%"])                                                                                                                                   
     #  SELECT  1 AS one FROM "humen" WHERE (name LIKE '%hil%') LIMIT 1
     # => true 
-    
+    #
     query = 'hil'
     h = Human.where(['name LIKE ?', "%#{query}%"])                                                                                                                                     
     #  SELECT "humen".* FROM "humen" WHERE (name LIKE '%hil%')
     # => #<ActiveRecord::Relation [#<Human id: 4, name: "Phil", power: "Songs and Drums", age: 55, description: "Super cool", fighting: true, created_at: "2017-03-16 11:55:39", updated_at: "2017-03-16 11:55:39">]> 
 
 
+###Exists With a set of id
 
+    Human.exists?(id: [1, 4, 8])                                                                                                                          
+    #  SELECT  1 AS one FROM "humen" WHERE "humen"."id" IN (1, 4, 8) LIMIT 1
+    # => true 
+
+
+###Exists using other field 
+    
+    Human.exists?(name: 'Sting')
+    #  SELECT  1 AS one FROM "humen" WHERE "humen"."name" = ? LIMIT 1  [["name", "Sting"]]
+    # => true 
 
 
 
