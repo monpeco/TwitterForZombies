@@ -137,10 +137,22 @@ This recover a record by just using a dynamic finder that makes use of Ruby’s 
 
 ###Other finders
 
-    Person.fifth
+    Human.fifth
     # => #<Human id: 5, name: "Chipper", power: "Batting", age: 40, description: "Best baseball player", fighting: true, created_at: "2017-03-16 11:56:18", updated_at: "2017-03-16 11:56:18"> 
     
+    Human.order("created_at DESC").fifth
+    # => #<Human id: 2, name: "Waka", power: "Resistence", age: 26, description: "Great!!", fighting: false, created_at: "2017-03-13 12:05:43", updated_at: "2017-03-13 12:05:43"> 
+
+###With 'Like'
+
+    h = Human.exists?(['name LIKE ?', "%#{query}%"])                                                                                                                                   
+    #  SELECT  1 AS one FROM "humen" WHERE (name LIKE '%hil%') LIMIT 1
+    # => true 
     
+    query = 'hil'
+    h = Human.where(['name LIKE ?', "%#{query}%"])                                                                                                                                     
+    #  SELECT "humen".* FROM "humen" WHERE (name LIKE '%hil%')
+    # => #<ActiveRecord::Relation [#<Human id: 4, name: "Phil", power: "Songs and Drums", age: 55, description: "Super cool", fighting: true, created_at: "2017-03-16 11:55:39", updated_at: "2017-03-16 11:55:39">]> 
 
 
 
