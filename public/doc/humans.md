@@ -135,7 +135,12 @@ This recover a record by just using a dynamic finder that makes use of Ruby’s 
     h = Human.find_by(power: "Operations")
      => #<Human id: 1, name: "Pedro", power: "Operations", age: 30, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-14 16:50:47"> 
 
+###Other finders
 
+    Person.fifth
+    # => #<Human id: 5, name: "Chipper", power: "Batting", age: 40, description: "Best baseball player", fighting: true, created_at: "2017-03-16 11:56:18", updated_at: "2017-03-16 11:56:18"> 
+    
+    
 
 
 
