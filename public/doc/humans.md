@@ -179,5 +179,6 @@ This recover a record by just using a dynamic finder that makes use of Ruby’s 
     Human.find([2,5])   # SELECT "humen".* FROM "humen" WHERE "humen"."id" IN (2, 5)
 
 
-
-
+Person.find_by_user_name(user_name)
+Person.find_all_by_last_name(last_name)
+Person.find_by_user_name_and_password(user_name, password)
