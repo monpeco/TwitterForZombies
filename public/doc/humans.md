@@ -207,3 +207,22 @@ Person.find_by_user_name_and_password(user_name, password)
     #  SELECT "humen".* FROM "humen" WHERE "humen"."name" IN ('Pedro', 'Waka')
     => #<ActiveRecord::Relation [#<Human id: 1, name: "Pedro", power: "Operations", age: 30, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-14 16:50:47">
     , #<Human id: 2, name: "Waka", power: "Resistence", age: 26, description: "Great!!", fighting: false, created_at: "2017-03-13 12:05:43", updated_at: "2017-03-13 12:05:43">]> 
+
+##Creating a scope
+
+Add to the model the scope definition
+
+    class Human < ActiveRecord::Base
+        scope :yongers, -> { where(age: 0..30) }
+        ...
+    end
+
+test the scope
+
+    m = Human.yongers
+    #  Human Load (0.3ms)  SELECT "humen".* FROM "humen" WHERE ("humen"."age" BETWEEN 0 AND 30)
+     => #<ActiveRecord::Relation [#<Human id: 1, name: "Pedro", power: "Operations", age: 30, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-14 16:50:47">
+     , #<Human id: 2, name: "Waka", power: "Resistence", age: 26, description: "Great!!", fighting: false, created_at: "2017-03-13 12:05:43", updated_at: "2017-03-13 12:05:43">]>
+ 
+ 
+ 
