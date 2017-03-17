@@ -223,6 +223,24 @@ test the scope
     #  Human Load (0.3ms)  SELECT "humen".* FROM "humen" WHERE ("humen"."age" BETWEEN 0 AND 30)
      => #<ActiveRecord::Relation [#<Human id: 1, name: "Pedro", power: "Operations", age: 30, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-14 16:50:47">
      , #<Human id: 2, name: "Waka", power: "Resistence", age: 26, description: "Great!!", fighting: false, created_at: "2017-03-13 12:05:43", updated_at: "2017-03-13 12:05:43">]>
+
+##Creating a scope with parameter
+
+    class Human < ActiveRecord::Base
+        scope :with_power, -> (power) { where(power: power) }
+        ...
+    end
+
+test the scope
+
+    p = Human.with_power 'Resistence'
+      Human Load (0.2ms)  SELECT "humen".* FROM "humen" WHERE "humen"."power" = ?  [["power", "Resistence"]]
+     => #<ActiveRecord::Relation [#<Human id: 2, name: "Waka", power: "Resistence", age: 26, description: "Great!!", fighting: false, created_at: "2017-03-13 12:05:43", updated_at: "2017-03-13 12:05:43">]
  
  
+###Good article about scopes
+
+> http://blog.plataformatec.com.br/2013/02/active-record-scopes-vs-class-methods/
+
+
  
