@@ -178,7 +178,15 @@ This recover a record by just using a dynamic finder that makes use of Ruby’s 
     Human.find(1,2,3)   # SELECT "humen".* FROM "humen" WHERE "humen"."id" IN (1, 2, 3)
     Human.find([2,5])   # SELECT "humen".* FROM "humen" WHERE "humen"."id" IN (2, 5)
 
+###Usinf find_by_sql
 
+    h = Human.find_by_sql("select * from humen where name like '%i%'")
+    # select * from humen where name like '%i%'
+    # => [#<Human id: 3, name: "Sting", power: "Songs", age: 50, description: "He is hyper talented", fighting: true, created_at: "2017-03-16 11:54:58", updated_at: "2017-03-16 11:54:58">
+        , #<Human id: 4, name: "Phil", power: "Songs and Drums", age: 55, description: "Super cool", fighting: true, created_at: "2017-03-16 11:55:39", updated_at: "2017-03-16 11:55:39">
+        , #<Human id: 5, name: "Chipper", power: "Batting", age: 40, description: "Best baseball player", fighting: true, created_at: "2017-03-16 11:56:18", updated_at: "2017-03-16 11:56:18">] 
+
+####This 3 do not work 
 Person.find_by_user_name(user_name)
 Person.find_all_by_last_name(last_name)
 Person.find_by_user_name_and_password(user_name, password)
