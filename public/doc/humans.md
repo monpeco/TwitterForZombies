@@ -190,3 +190,13 @@ This recover a record by just using a dynamic finder that makes use of Ruby’s 
 Person.find_by_user_name(user_name)
 Person.find_all_by_last_name(last_name)
 Person.find_by_user_name_and_password(user_name, password)
+
+###Using where with logical operators
+
+    h = Human.where('name = ? or age > ?', 'Pedro', 30)                                                                                                                              
+    #  SELECT "humen".* FROM "humen" WHERE (name = 'Pedro' or age > 30)
+    # => #<ActiveRecord::Relation [#<Human id: 1, name: "Pedro", power: "Operations", age: 30, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-14 16:50:47">
+    , #<Human id: 3, name: "Sting", power: "Songs", age: 50, description: "He is hyper talented", fighting: true, created_at: "2017-03-16 11:54:58", updated_at: "2017-03-16 11:54:58">
+    , #<Human id: 4, name: "Phil", power: "Songs and Drums", age: 55, description: "Super cool", fighting: true, created_at: "2017-03-16 11:55:39", updated_at: "2017-03-16 11:55:39">
+    , #<Human id: 5, name: "Chipper", power: "Batting", age: 40, description: "Best baseball player", fighting: true, created_at: "2017-03-16 11:56:18", updated_at: "2017-03-16 11:56:18">
+    , #<Human id: 6, name: "Alan", power: "Speed", age: 33, description: "Basketball", fighting: false, created_at: "2017-03-16 11:57:43", updated_at: "2017-03-16 11:57:43">]> 
