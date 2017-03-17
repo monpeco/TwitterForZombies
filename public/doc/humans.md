@@ -200,3 +200,10 @@ Person.find_by_user_name_and_password(user_name, password)
     , #<Human id: 4, name: "Phil", power: "Songs and Drums", age: 55, description: "Super cool", fighting: true, created_at: "2017-03-16 11:55:39", updated_at: "2017-03-16 11:55:39">
     , #<Human id: 5, name: "Chipper", power: "Batting", age: 40, description: "Best baseball player", fighting: true, created_at: "2017-03-16 11:56:18", updated_at: "2017-03-16 11:56:18">
     , #<Human id: 6, name: "Alan", power: "Speed", age: 33, description: "Basketball", fighting: false, created_at: "2017-03-16 11:57:43", updated_at: "2017-03-16 11:57:43">]> 
+
+###Using where with arrays as arguments
+
+    h = Human.where(name: ['Pedro', 'Waka'])
+    #  SELECT "humen".* FROM "humen" WHERE "humen"."name" IN ('Pedro', 'Waka')
+    => #<ActiveRecord::Relation [#<Human id: 1, name: "Pedro", power: "Operations", age: 30, description: "Plastic surgeon", fighting: true, created_at: "2017-03-12 01:00:22", updated_at: "2017-03-14 16:50:47">
+    , #<Human id: 2, name: "Waka", power: "Resistence", age: 26, description: "Great!!", fighting: false, created_at: "2017-03-13 12:05:43", updated_at: "2017-03-13 12:05:43">]> 
