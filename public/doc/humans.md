@@ -247,7 +247,7 @@ test the scope
 
     #app/views/humem/_bookmar.html.erb
      <div id="error_explanation">
-      <h2><%= Human.all.count %> This is my partial for Book Marks</h2>
+      <h2>The number of Humans: <%= Human.all.count %>. This is my partial for Book Marks</h2>
     
     </div>
     
