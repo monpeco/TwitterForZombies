@@ -243,4 +243,16 @@ test the scope
 > http://blog.plataformatec.com.br/2013/02/active-record-scopes-vs-class-methods/
 
 
- 
+##Creation of a partial
+
+    #app/views/humem/_bookmar.html.erb
+     <div id="error_explanation">
+      <h2><%= Human.all.count %> This is my partial for Book Marks</h2>
+    
+    </div>
+    
+    
+    #app/views/humem/index.html.erb
+    <br>
+    <%= render :partial => "bookmark" %>
+    <br>
