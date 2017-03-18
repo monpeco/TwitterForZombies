@@ -31,7 +31,7 @@
 </table>
 
 <br>
-<%= render :partial => "bookmark" %>
+<%= render :partial => "bookmark", :locals => {:xyz => 'abc'} %>
 <br>
 
 <%= link_to 'New Human', new_human_path %>
