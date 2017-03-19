@@ -5,6 +5,7 @@ class HumenController < ApplicationController
   # GET /humen.json
   def index
     @humen = Human.all
+    @humen_count = Human.all.count
   end
 
   # GET /humen/1
