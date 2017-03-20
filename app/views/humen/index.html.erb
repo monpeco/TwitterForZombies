@@ -31,9 +31,11 @@
 </table>
 
 <br>
+<%# :locals => {:xyz => 'abc'} is creating a local variable in the partial called 'xyz' %>
+<%# :object => 'Another value' is creating a local variable called like the partial (bookmark) %>
 <%= render :partial => "bookmark", :locals => {:xyz => 'abc'}, :object => 'Another value' %>
 <br>
 <% @oldest_human = Human.order(age: :desc).first %>
-The oldest Human is <%= link_to "#{@oldest_human.name}(#{@oldest_human.age})", @special_human %>
+The oldest Human is <%= link_to "#{@oldest_human.name}(#{@oldest_human.age})", @oldest_human %>
 <br>
 <%= link_to 'New Human', new_human_path %>
