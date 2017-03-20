@@ -16,6 +16,7 @@ class HumenController < ApplicationController
   # GET /humen/new
   def new
     @human = Human.new
+    @send_object = params[:send_object]
   end
 
   # GET /humen/1/edit

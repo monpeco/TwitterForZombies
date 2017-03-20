@@ -38,4 +38,5 @@
 <% @oldest_human = Human.order(age: :desc).first %>
 The oldest Human is <%= link_to "#{@oldest_human.name}(#{@oldest_human.age})", @oldest_human %>
 <br>
-<%= link_to 'New Human', new_human_path %>
+<%# Sending a object from index to new %>
+<%= link_to 'New Human', new_human_path(:send_object => 'this is the object') %>
