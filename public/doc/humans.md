@@ -256,3 +256,20 @@ test the scope
     <br>
     <%= render :partial => "bookmark" %>
     <br>
+    
+###Send object from index to new
+    
+    #index.html.erb
+    <%# Sending a object from index to new %>
+    <%= link_to 'New Human', new_human_path(:send_object => 'this is the object') %>    
+    #
+    #humen_controller.rb
+    # GET /humen/new
+    def new
+        @human = Human.new
+        @send_object = params[:send_object]
+    end
+    #
+    #new.html.erb
+    <h2>@send_object: <%= @send_object %> </h2>
+  
