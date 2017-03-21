@@ -42,5 +42,7 @@ The oldest Human is <%= link_to "#{@oldest_human.name}(#{@oldest_human.age})", @
 <%= link_to 'New Human', new_human_path(:send_object => 'this is the object') %>
 
 <% obj = Human.first %>
-
+<br>
 <%= link_to 'New Human___', human_path(obj, :send_object => 'this is the object') %>
+<br>
+<a href="#" onclick="this.style.backgroundColor='#990000'">Paint it red</a>
