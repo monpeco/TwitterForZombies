@@ -40,3 +40,7 @@ The oldest Human is <%= link_to "#{@oldest_human.name}(#{@oldest_human.age})", @
 <br>
 <%# Sending a object from index to new %>
 <%= link_to 'New Human', new_human_path(:send_object => 'this is the object') %>
+
+<% obj = Human.first %>
+
+<%= link_to 'New Human___', human_path(obj, :send_object => 'this is the object') %>
