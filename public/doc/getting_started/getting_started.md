@@ -31,3 +31,11 @@ in `app/views/welcome/index.html.erb`
 <h1>(A custom) Hello from welcome controller</h1>
 <h2>index view</h2>
 ```
+
+###4.3 Setting the Application Home Page
+
+```ruby
+Rails.application.routes.draw do
+  root 'welcome#index'
+end
+```
