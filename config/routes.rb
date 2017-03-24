@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'welcome/index'
+
   root "humen#index" # get "/", "zombies#index"
 
   resources :zombies do
