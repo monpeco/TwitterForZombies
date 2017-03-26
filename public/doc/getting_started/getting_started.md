@@ -1,3 +1,6 @@
+##Link:
+> http://guides.rubyonrails.org/getting_started.html
+
 ###4.2 Say "Hello", Rails
 
 ```ruby
@@ -34,8 +37,24 @@ in `app/views/welcome/index.html.erb`
 
 ###4.3 Setting the Application Home Page
 
+in `config/routes.rb`
+
 ```ruby
 Rails.application.routes.draw do
   root 'welcome#index'
 end
 ```
+
+###5 Getting Up and Running
+
+in `config/routes.rb`
+
+```ruby
+Rails.application.routes.draw do
+  ...
+  resources :articles     #create a new resource 'articles'
+  
+end
+
+
+###5.1 Laying down the ground work
