@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'    #tells Rails to map requests to the root of the application to the welcome controller's index action
+  #root 'welcome#index'    #tells Rails to map requests to the root of the application to the welcome controller's index action
+  root 'tweets#index'    #Root to tweets index (temporal)
   
   get 'welcome/index'     #tells Rails to map requests to http://localhost:3000/welcome/index to the welcome controller's index action
 
@@ -8,10 +9,14 @@ Rails.application.routes.draw do
   
   # root "humen#index" # get "/", "zombies#index" 
 
+  resources :zombies 
+  resources :tweets       #Root to tweets index (temporal)
+
+  """
   resources :zombies do
     resources :tweets
   end
-
+  """
   resources :humen
   
 
