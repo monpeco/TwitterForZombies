@@ -10,6 +10,7 @@ class ZombiesController < ApplicationController
   # GET /zombies/1
   # GET /zombies/1.json
   def show
+    @tweet = Tweet.find(5)
   end
 
   # GET /zombies/new
