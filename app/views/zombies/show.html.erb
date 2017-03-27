@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @zombie.name %>
+  <strong>The Zombie:</strong>
+  <%= @zombie_f.name %>
 </p>
 
 <p>
   <strong>Bio:</strong>
-  <%= @zombie.bio %>
+  <%= @zombie_f.bio %>
 </p>
 
 <%# level 3 example code%>
@@ -19,6 +17,13 @@
 <p>Go to all <%= link_to "Zombies", zombies_path,  data: { confirm: 'Are you sure?'} %></p>
 
 <%# level 3 example code%>
+
+<%# Iterate over the param hash%>
+
+<% @params_hash.each do |p,v| %>
+<strong>Key: </strong><%= p %><strong>, value: </strong><%= v %><br>
+<% end %>
+
 
 
 <%= link_to 'Edit', edit_zombie_path(@zombie) %>

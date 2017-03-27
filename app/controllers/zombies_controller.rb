@@ -10,7 +10,8 @@ class ZombiesController < ApplicationController
   # GET /zombies/1
   # GET /zombies/1.json
   def show
-    @tweet = Tweet.find(5)
+    @zombie_f = Zombie.find(params[:id])
+    @params_hash = params
   end
 
   # GET /zombies/new
