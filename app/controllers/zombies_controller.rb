@@ -30,6 +30,11 @@ class ZombiesController < ApplicationController
     render  :another    #or render  'another'
   end
 
+  # GET /zombies/1/edit
+  def wannabe
+    @wannabe = Zombie.where(email: nil)
+  end
+  
   # POST /zombies
   # POST /zombies.json
   def create

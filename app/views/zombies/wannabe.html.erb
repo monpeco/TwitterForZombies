@@ -1,0 +1,10 @@
+<h2>This is the view for the zombie's wannabe</h2>
+<p>
+  <strong>The zombie's wannabe:</strong>
+</p>
+
+<% @wannabe.each do |zombie| %>
+  <strong>zombie: </strong><%= zombie.name %><br>
+<% end %>
+
+<%= link_to 'Back to zombie list', zombies_path %>
