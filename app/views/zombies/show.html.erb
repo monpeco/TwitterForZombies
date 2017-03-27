@@ -11,11 +11,11 @@
 </p>
 
 <%# level 3 example code%>
-<% brain = Brain.find(1) %>
-<h2><%= brain.flavor %></h2>
+<% brain = Brain.try(:find, 2) %>
+<h2><%= brain ? brain.flavor : 'No initial brain' %></h2>
 
 <% zo = @zombie.id %>
-<p>The brain: <%= Brain.where(zombie_id: zo).first.status %></p>
+<p>The brain: <%= Brain.find(2).status %></p>
 <p>Go to all <%= link_to "Zombies", zombies_path,  data: { confirm: 'Are you sure?'} %></p>
 
 <%# level 3 example code%>
