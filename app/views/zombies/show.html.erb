@@ -24,7 +24,8 @@
 <strong>Key: </strong><%= p %><strong>, value: </strong><%= v %><br>
 <% end %>
 
-
+<p>/zombies/1?tweet[status]=estoy</p>
+<p>Key: tweet, value: {"status"=>"estoy"}</p>
 
 <%= link_to 'Edit', edit_zombie_path(@zombie) %>
 <%= link_to 'Back', zombies_path %>
