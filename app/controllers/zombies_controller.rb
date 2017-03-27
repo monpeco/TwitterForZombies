@@ -26,6 +26,8 @@ class ZombiesController < ApplicationController
 
   # GET /zombies/1/edit
   def edit
+    @params_to_edit = params
+    render  :another    #or render  'another'
   end
 
   # POST /zombies
