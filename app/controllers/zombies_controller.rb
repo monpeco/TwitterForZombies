@@ -12,6 +12,11 @@ class ZombiesController < ApplicationController
   def show
     @zombie_f = Zombie.find(params[:id])
     @params_hash = params
+    
+    respond_to do | format |
+      format.html
+      format.json
+    end
   end
 
   # GET /zombies/new
