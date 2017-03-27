@@ -33,6 +33,7 @@ class ZombiesController < ApplicationController
   # GET /zombies/1/edit
   def wannabe
     @wannabe = Zombie.where(email: nil)
+    @my_flash = { a: 1, b: 2, c: 3, d: 4 }
   end
   
   # POST /zombies
