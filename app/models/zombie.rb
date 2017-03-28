@@ -8,5 +8,9 @@ class Zombie < ActiveRecord::Base
     
     #validates :email, presence: true, email: true
     
+    def create_tweets(attribute)
+        attribute['zombie_id'] = self.id
+        Tweet.create(attribute)
+    end
 end
 
