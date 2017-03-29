@@ -72,5 +72,16 @@ $ rails generate controller Articles
 class ArticlesController < ApplicationController
 end
 ```
+--
+
+>  Unknown action   
+>  The action 'new' could not be found for ArticlesController   
+
+```ruby
+class ArticlesController < ApplicationController
+  def new
+  end
+end
+```
 
 
