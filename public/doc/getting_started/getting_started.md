@@ -56,5 +56,21 @@ Rails.application.routes.draw do
   
 end
 
+```
 
 ###5.1 Laying down the ground work
+
+>  Routing Error   
+>  uninitialized constant ArticlesController   
+
+
+```ruby
+$ rails generate controller Articles
+```
+
+```ruby
+class ArticlesController < ApplicationController
+end
+```
+
+
