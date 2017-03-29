@@ -84,4 +84,13 @@ class ArticlesController < ApplicationController
 end
 ```
 
+>  Template is missing
+Missing template articles/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. 
+Searched in: * "/home/ubuntu/workspace/TwitterForZombies/app/views"
+
+create `/app/views/articles/new.html.erb`, and iside that file:
+
+```ruby
+<h2>This is the hand-made template</h2>
+```
 
