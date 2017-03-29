@@ -84,6 +84,8 @@ class ArticlesController < ApplicationController
 end
 ```
 
+--
+
 >  Template is missing
 Missing template articles/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. 
 Searched in: * "/home/ubuntu/workspace/TwitterForZombies/app/views"
@@ -93,4 +95,28 @@ create `/app/views/articles/new.html.erb`, and iside that file:
 ```ruby
 <h2>This is the hand-made template</h2>
 ```
+
+--
+
+To add `form_for` in the `new.html.erb`:
+
+```ruby
+<%= form_for :article do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  <p>
+      
+  <p>
+    <%= f.label :geo %><br>
+    <%= f.text_field :geo %>
+  <p>
+      
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  <p>      
+<% end %>
+```
+
 
