@@ -167,3 +167,16 @@ The has_many `:through` association is also useful for setting up "shortcuts" th
     
     @document.paragraphs
 
+**Note:** Check if a Zombie has Tweets
+
+    Zombie.joins(:tweets).where(name: "Alice")
+      Zombie Load (0.2ms)  SELECT "zombies".* FROM "zombies" INNER JOIN "tweets" ON "tweets"."zombie_id" = "zombies"."id" WHERE "zombies"."name" = ?  [["name", "Alice"]]
+     => #<ActiveRecord::Relation [#<
+    Zombie id: 6, name: "Alice", bio: "What a journey", created_at: "2017-03-01 02:43:44", updated_at: "2017-03-01 12:45:27", email: "hill@under.com", rotting: true
+    Zombie id: 6, name: "Alice", bio: "What a journey", created_at: "2017-03-01 02:43:44", updated_at: "2017-03-01 12:45:27", email: "hill@under.com", rotting: true>]> 
+    
+    Zombie.joins(:tweets).where(name: "Joseph")
+      Zombie Load (0.2ms)  SELECT "zombies".* FROM "zombies" INNER JOIN "tweets" ON "tweets"."zombie_id" = "zombies"."id" WHERE "zombies"."name" = ?  [["name", "Joseph"]]
+     => #<ActiveRecord::Relation []> 
+   
+ 
