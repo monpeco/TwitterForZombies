@@ -16,3 +16,6 @@
     <%= f.text_area :body %>
   <p>      
 <% end %>
+
+<%= render :partial => "/humen/bookmark", :locals => {:xyz => 'called from article/new'}, :object => 'Another article/new' %>
+<%# render :partial => "bookmark", :locals => {:xyz => 'abc'} %>
