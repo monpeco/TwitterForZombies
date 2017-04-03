@@ -22,6 +22,7 @@ class ZombiesController < ApplicationController
   # GET /zombies/new
   def new
     @zombie = Zombie.new
+    @article = 'my personal article'
   end
 
   # GET /zombies/1/edit
