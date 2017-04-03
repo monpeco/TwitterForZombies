@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 # Bundle httparty
 gem "httparty"
+# Bundle nokogiri
+gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
+#  'pry-rails'
+gem 'pry-rails', :group => :development
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 # Use sqlite3 as the database for Active Record
