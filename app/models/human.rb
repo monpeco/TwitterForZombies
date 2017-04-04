@@ -1,6 +1,10 @@
 class Human < ActiveRecord::Base
+    validates :age, numericality: {greater_than_or_equal_to: 0, message: 'Este campo tiene que ser positivo' }
+    
     scope :yongers, -> { where(age: 0..30) }    #lazy evaluated when it is called
     scope :with_power, -> (power) { where(power: power) }
+    
+
     
     @current_user = 44
     Rails.logger.debug "@current_user,: #{@current_user}"
