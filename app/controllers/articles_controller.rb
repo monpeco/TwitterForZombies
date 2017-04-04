@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
-  def new
+  def index
+    @date = Date.today
   end
+  
+  def new
+  end  
 end
