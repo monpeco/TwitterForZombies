@@ -4,5 +4,6 @@ class ArticlesController < ApplicationController
   end
   
   def new
+    redirect_to  articles_alternative_path
   end  
 end

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root 'zombies#index'    #Root to tweets index (temporal)
   
   get 'welcome/index'     #tells Rails to map requests to http://localhost:3000/welcome/index to the welcome controller's index action
-
+  
+  get 'articles/alternative' => 'articles#alternative'
   resources :articles     #create a new resource 'articles'
   
   # root "humen#index" # get "/", "zombies#index" 
