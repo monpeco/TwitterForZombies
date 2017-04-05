@@ -5,11 +5,11 @@ require 'csv'
 doc = Nokogiri::HTML(open("http://www.google.com/search?q=doughnuts"))
 #  puts doc
 #Print <div class="g">
-  doc.xpath('//div[@class = "g"]').each do |node|
+  doc.xpath('//span[@class = "st"]').each do |node|
     puts node.text
   end
   
-File.open('doughnuts.txt', 'w') { |file| file.write(doc.xpath('//div[@class = "g"]')) }
+File.open('doughnuts.txt', 'w') { |file| file.write(doc.xpath('//span[@class = "st"]')) }
 
 # doc.xpath('//h3/a').each do |node|
 #   puts node.text
