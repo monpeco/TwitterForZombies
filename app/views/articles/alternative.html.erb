@@ -1,3 +1,7 @@
 <h1>This is a alternative view</h1>
 
 <h3>To test redirect_to</h3>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
