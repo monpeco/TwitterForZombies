@@ -5,6 +5,9 @@ class ZombiesController < ApplicationController
   # GET /zombies.json
   def index
     @zombies = Zombie.all
+        logger = Logger.new("log/db_issues.log")
+        logger.error "look at me"
+        logger.close
   end
 
   # GET /zombies/1
