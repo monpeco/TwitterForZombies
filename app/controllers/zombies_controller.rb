@@ -15,6 +15,7 @@ class ZombiesController < ApplicationController
   def show
     @zombie_f = Zombie.find(params[:id])
     @params_hash = params
+    @env_var = ENV['IP']
     
     respond_to do | format |
       format.html
