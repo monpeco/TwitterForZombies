@@ -272,4 +272,14 @@ test the scope
     #
     #new.html.erb
     <h2>@send_object: <%= @send_object %> </h2>
+    
+###Create several instance with one operation
+
+    Human.create([
+    {name: 'Ethan', power: 'Bike running', age: 30, fighting: true},
+    {name: 'Glen', power: 'Bike running', age: 40, fighting: true},
+    {name: 'Luke', power: 'Bike running', age: 45, fighting: true}
+    ])
+
+
   
