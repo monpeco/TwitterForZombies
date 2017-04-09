@@ -27,3 +27,11 @@ File.open('doughnuts.txt', 'w') { |file| file.write(doc.xpath('//span[@class = "
 # CSV.open('pets.csv', 'w') do |csv|
 # 	csv << item_array
 # end
+
+
+
+
+BEGIN {
+   puts "Initializing Ruby Program"
+}
+
