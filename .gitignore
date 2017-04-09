@@ -16,5 +16,9 @@
 !/log/.keep
 /tmp
 
+#Ignore TXT and CSV in scraping
+/lib/scrapping/*.txt
+/lib/scrapping/*.csv
+
 #Ignore byebug history
 .byebug_history
