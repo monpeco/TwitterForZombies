@@ -22,3 +22,7 @@
 
 #Ignore byebug history
 .byebug_history
+
+
+#Ignore environment variables
+/config/app_environment_variables.rb
