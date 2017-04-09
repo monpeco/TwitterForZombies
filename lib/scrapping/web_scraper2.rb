@@ -23,6 +23,11 @@ File.open('doughnuts.txt', 'w') { |file| file.write(doc.xpath('//span[@class = "
 #   item_array.push(node.text)
 # end
 
+END {
+   puts "Terminating Ruby Program"
+}
+
+
 # this will push your array into a CSV file
 # CSV.open('pets.csv', 'w') do |csv|
 # 	csv << item_array
