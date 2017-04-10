@@ -17,3 +17,13 @@
 <% @params_to_edit.each do |p,v| %>
 <strong>Key: </strong><%= p %><strong>, value: </strong><%= v %><br>
 <% end %>
+
+<!-- Create the SVG pane. -->
+<svg height="200" width="200">
+  <!-- Create the circle. -->
+  <circle cx="100" cy="100" r="50" fill="gold" id="uIElement" onclick="clickMe();"
+  />
+</svg>
+<p>
+  Click on the gold circular user interface element.
+</p>
