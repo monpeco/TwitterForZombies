@@ -1,3 +1,5 @@
+include FormatHelper
+
 class ZombiesController < ApplicationController
   before_action :set_zombie, only: [:show, :edit, :update, :destroy]
 
@@ -40,6 +42,7 @@ class ZombiesController < ApplicationController
   def wannabe
     @wannabe = Zombie.where(email: nil)
     @my_flash = { a: 1, b: 2, c: 3, d: 4 }
+    @my_format = FormatHelper.print_hello
   end
   
   # POST /zombies
