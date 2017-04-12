@@ -26,6 +26,13 @@
 
 <br>
 
-<%= link_to 'New Zombie', new_zombie_path %>
-<br>
+<%= link_to 'New Zombie', new_zombie_path %> <br>
+
 <%= link_to 'zombies_wannabe', zombies_wannabe_path %>
+
+
+<% provider = "GoogleOauth2" %>
+
+<%= pretty_provider = provider == 'GoogleOauth2' ? "Google": provider %> 
+
+<%= debug pretty_provider %>
