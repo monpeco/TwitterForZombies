@@ -49,6 +49,54 @@ dates and communicate. The time zone presentation should be the application’s 
 """
 
 
+#How Ruby on Rails works
 
+# config/initializers/time_zone.rb
+Time.zone = "America/Sao_Paulo"
 
+"""
+Ruby on Rails can have a time zone configuration per application, totally ignoring the TZ 
+environment variable, but this behavior has some implications.
 
+First, Ruby won’t consider Rails’ time zone configuration. This means that if your system 
+is using the America/Sao_Paulo time zone and your application is using America/Los_Angeles, 
+Ruby will still consider the former configuration.
+"""
+
+Time.now.zone
+#=> "BRST"
+
+Time.zone = "America/Los_Angeles"
+#=> "America/Los_Angeles"
+
+Time.now.zone
+#=> "BRST"
+
+"""
+To generate dates that knows about the time zone, you should use methods defined by 
+the ActiveSupport library. These methods will generate objects from the 
+ActiveSupport::TimeWithZone3 class. There are a large number of methods and their 
+usage will depend on what you want to accomplish.
+
+"""
+
+Time.zone.now
+#=> Thu, 13 Apr 2017 09:49:43 PDT -07:00
+
+Time.zone.today
+#=> Thu, 13 Apr 2017
+
+Time.current
+#=> Thu, 13 Apr 2017 09:49:43 PDT -07:00
+
+1.hour.ago
+#=> Thu, 13 Apr 2017 08:49:43 PDT -07:00
+
+1.day.from_now
+#=> Fri, 14 Apr 2017 09:49:43 PDT -07:00
+
+Date.yesterday
+#=> Wed, 12 Apr 2017
+
+Date.tomorrow
+#=> Fri, 14 Apr 2017
