@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :photos
+namespace :admin do
+   resources :photos
+end
+
+#scope module: 'admin' do
+ # get '/photos', to: 'photos#index' # this route in scope
+#end
+
   #root 'welcome#index'    #tells Rails to map requests to the root of the application to the welcome controller's index action
   root 'zombies#index'    #Root to tweets index (temporal)
   
