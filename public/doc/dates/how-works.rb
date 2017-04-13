@@ -1,3 +1,5 @@
+#http://nandovieira.com/working-with-dates-on-ruby-on-rails
+
 require "time"
 
 Time.parse("Dec 8 2015 10:19")
