@@ -32,3 +32,23 @@ ENV["TZ"] = "America/Los_Angeles"
 
 Time.now
 #=> 2017-04-13 09:38:23 -0700
+
+
+
+
+"""
+But in postgres
+
+SELECT current_setting('timezone');
+=> Brazil/East
+
+You’re better off avoiding the time zone in all pieces of your infrastructure; instead of 
+using a specific time zone, just go with Etc/UTC. This will free you from problems related 
+to DST and cron jobs. It will also be easier to define how different systems will work with 
+dates and communicate. The time zone presentation should be the application’s responsibility.
+"""
+
+
+
+
+
