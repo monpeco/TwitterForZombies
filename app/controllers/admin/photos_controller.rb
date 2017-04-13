@@ -1,3 +1,5 @@
+module Admin
+  
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
@@ -71,4 +73,6 @@ class PhotosController < ApplicationController
     def photo_params
       params.require(:photo).permit(:name, :score)
     end
+end
+
 end
