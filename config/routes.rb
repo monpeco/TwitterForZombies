@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :photos
   #root 'welcome#index'    #tells Rails to map requests to the root of the application to the welcome controller's index action
   root 'zombies#index'    #Root to tweets index (temporal)
   

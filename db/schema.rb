@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311223830) do
+ActiveRecord::Schema.define(version: 20170413203223) do
 
   create_table "brains", force: :cascade do |t|
     t.integer  "zombie_id"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20170311223830) do
     t.boolean  "fighting"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tweets", force: :cascade do |t|
