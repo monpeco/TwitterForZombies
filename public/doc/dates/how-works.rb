@@ -102,3 +102,9 @@ Date.yesterday
 
 Date.tomorrow
 #=> Fri, 14 Apr 2017
+
+#The general guidelines are:
+
+Use Time.current #instead of Time.now.
+Use Date.current #instead of Date.today.
+
