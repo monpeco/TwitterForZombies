@@ -108,3 +108,19 @@ Date.tomorrow
 Use Time.current #instead of Time.now.
 Use Date.current #instead of Date.today.
 
+
+# activesupport-4.2.5/lib/active_support/core_ext/time/calculations.rb
+# line 30
+class Time
+  def current
+    ::Time.zone ? ::Time.zone.now : ::Time.now
+  end
+end
+
+# activesupport-4.2.5/lib/active_support/core_ext/date/calculations.rb
+# line 46
+class Date
+  def current
+    ::Time.zone ? ::Time.zone.today : ::Date.today
+  end
+end
