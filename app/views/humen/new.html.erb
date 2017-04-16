@@ -4,4 +4,12 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', humen_path %>
+<%= link_to('humen_path', humen_path) %><br>
+
+<%= link_to('human_path', human_path(1)) %><br>
+<%= link_to('human_path(Human.find(1)', human_path(Human.find(1))) %><br>
+
+<%= "10.times" %><br>
+<% 10.times do |f|  %>
+  <%= f  %> <br>
+<%end  %>
