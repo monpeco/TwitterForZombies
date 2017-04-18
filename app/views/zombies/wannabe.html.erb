@@ -33,4 +33,14 @@
 
 <%= '4' %><br>
 <a href="##{bla bla}", class="ch-share-social__link">77</a>
-  
+
+
+<%= 'This is another way' %><br>
+<li>
+  <%= link_to 'bla bla', class: 'ch-share-social__link' do %>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="ch-share-social__icon" >
+      <title>Share on Twitter</title>
+      <use xlink:href="<%=asset_path('general.svg')%>#twitter"></use>
+    </svg>
+  <% end %>
+</li>
