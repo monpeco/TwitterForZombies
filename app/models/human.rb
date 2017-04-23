@@ -1,5 +1,7 @@
 class Human < ActiveRecord::Base
     
+    default_scope { where(fighting: true) }
+
     before_save :make_figthing
     
     validates :age, numericality: {greater_than_or_equal_to: 0, message: 'Este campo tiene que ser positivo' }
