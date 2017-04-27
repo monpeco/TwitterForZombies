@@ -2,3 +2,7 @@
 <h1><%= tweet.status %></h1>
 <h2>Tweet #<%= tweet.id %></h2>
 <p>Posted by: <%= tweet.zombie.name %></p>
+
+<%= 'Using cycle to iterate over a array' %>
+<% ring = %w[one two three].cycle %>
+<%=  ring.take(5) %>
