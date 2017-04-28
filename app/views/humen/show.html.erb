@@ -3,6 +3,17 @@
 <h2>Tweet #<%= tweet.id %></h2>
 <p>Posted by: <%= tweet.zombie.name %></p>
 
-<%= 'Using cycle to iterate over a array' %>
+<%# https://github.com/franzejr/best-ruby %>
+<%= 'Using cycle to iterate over a array' %><br>
 <% ring = %w[one two three].cycle %>
-<%=  ring.take(5) %>
+<%=  ring.take(5) %><br>
+
+<br>
+<%= 'Using alternative syntaxis' %><br>
+<% ring = %w(uno dos tres).cycle %>
+<%= ring.take(4) %><br>
+
+<br>
+<%= 'and another' %><br>
+<% ring = %w'5 6 7 8'.cycle %>
+<%= ring.take(9) %><br>
