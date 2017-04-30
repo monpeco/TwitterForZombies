@@ -1,4 +1,13 @@
-<%= debug (@env_space)%>
+<%= debug(@env_space) %>
+
+<%= 'Calling cookies to get the store value' %>
+<%= debug(cookies[:scotsids]) %>
+
+<%= 'Calling the method that set the value' %>
+<%= debug(add_to_cookie_2(params[:id])) %>
+
+<%= 'Calling cookies to get the store value' %>
+<%= debug(cookies[:scotsids]) %>
 
 <p>
   <strong>The Zombie:</strong>
