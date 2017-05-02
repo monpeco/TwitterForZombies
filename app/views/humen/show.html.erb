@@ -19,3 +19,8 @@
 <%= 'and another' %><br>
 <% ring = %w'5 6 7 8'.cycle %>
 <%= ring.take(9) %><br>
+
+<%# associative_arrays %>
+<% associative = [ %w(Someone 1), %w(Someone 1) ] %>
+<%= associative.assoc('Someone') %><br>
+<%= associative.rassoc('1') %><br>
