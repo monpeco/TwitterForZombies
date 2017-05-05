@@ -12,6 +12,7 @@ class Human < ActiveRecord::Base
     scope :with_description, ->  { where.not(description: nil) }
     scope :without_description,  -> { where("humen.description IS NULL") }
 
+    scope :gender, -> { where("category_gender_id != category_matchseeking_id" )  } 
     
     @current_user = 44
     Rails.logger.debug "@current_user,: #{@current_user}"
