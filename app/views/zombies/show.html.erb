@@ -1,3 +1,49 @@
+<script>
+
+$.ajax({
+     type: "POST",// GET in place of POST
+     contentType: "application/json; charset=utf-8",
+     url: "/room/test",
+     data : JSON.stringify({name:"ravi",age:"31"}),
+     dataType: "json",
+     success: function (result) {
+        //do somthing here
+        window.alert("success!!");
+     },
+     error: function (){
+        window.alert("something wrong!");
+     }
+});
+
+var callExecuter=function(){
+  $.ajax({
+    type:'GET',
+    url:'/zombies_wannabe',
+    success:function(){
+        window.alert("something wrong!");
+    }
+  });
+}
+
+$(document).on("click","#executer-button",callExecuter);
+
+$(".executer-button").on("click", function(){
+        alert("something wrong!");
+        console.log('something');
+
+});
+
+$(".executer-button").click(function (event) {
+  alert('Hooray!');
+        console.log('something 2');
+
+  //event.preventDefault(); // Prevent link from following its href
+});
+
+</script>
+
+<td><button type="button"  id="executer-button" class="btn btn- default">executer</button></td>
+
 <%= debug(@env_space) %>
 
 <%= 'Calling cookies to get the store value' %>
