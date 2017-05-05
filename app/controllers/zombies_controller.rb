@@ -44,8 +44,8 @@ class ZombiesController < ApplicationController
     @my_flash = { a: 1, b: 2, c: 3, d: 4 }
     @my_format = FormatHelper.print_hello
     
-    @current_human = Human.find(1)
-    @zombie_like_human = Zombie.where(name: @current_human.power).first
+    @current_human = Human.find(4)
+    @zombie_like_human = Zombie.first
   end
   
   # POST /zombies
@@ -91,6 +91,16 @@ class ZombiesController < ApplicationController
   def other_option
     Zombie.all.map { |g| [g.name.titleize , g.id.to_s] } 
   end
+
+    def add_to_cookie (id=0)
+        unless cookies[:scotids]
+            cookies[:scotsids] = JSON.generate(["#{id}"])
+        else
+            cookies[:scotsids] = JSON.parse(cookies[:scotsids]) << "#{id}"
+        end
+        
+        redirect_to :action => :wannabe
+    end
     
   private
     # Use callbacks to share common setup or constraints between actions.

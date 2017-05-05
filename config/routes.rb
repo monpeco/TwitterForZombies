@@ -19,6 +19,7 @@ end
   # root "humen#index" # get "/", "zombies#index" 
 
   get 'zombies/wannabe' => 'zombies#wannabe'
+  get 'zombies/add_to_cookie/:id' => 'zombies#add_to_cookie'
 
   resources :zombies 
   resources :tweets       #Root to tweets index (temporal)
