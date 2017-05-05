@@ -10,6 +10,9 @@ class ZombiesController < ApplicationController
         logger = Logger.new("log/db_issues.log")
         logger.error "look at me"
         logger.close
+        
+    @find_it = find_column()
+
   end
 
   # GET /zombies/1
@@ -106,6 +109,28 @@ class ZombiesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_zombie
       @zombie = Zombie.find(params[:id])
+    end
+    
+    # Method that looks for a column name in all Model and return the Model name if find it
+    def find_column(column_name = 'fighting')
+      find_it = 'not found'
+      array_model = []
+      
+      #find all the Model names
+      array_model = ActiveRecord::Base.connection.tables.map do |model|
+        model.capitalize.singularize.camelize
+      end
+      
+      array_model.delete_if{|i|i=='SchemaMigration'} #Remove the SchemaMigration
+      
+      #Get the `column_names` of every Model, and check if is the name that you are searching
+      array_model.each do |model|
+      	tmp = eval model + ".column_names" 
+      	tmp.each {|col| find_it = model if col == column_name} 
+      end
+      
+      find_it
+      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
