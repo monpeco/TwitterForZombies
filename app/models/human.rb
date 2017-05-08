@@ -9,6 +9,8 @@ class Human < ActiveRecord::Base
     scope :yongers, -> { where(age: 0..30) }    #lazy evaluated when it is called
     scope :with_power, -> (power) { where(power: power) }
     
+    scope :active, -> (fighting) { where(fighting: fighting).order(:created_at) }
+
     scope :with_description, ->  { where.not(description: nil) }
     scope :without_description,  -> { where("humen.description IS NULL") }
 
