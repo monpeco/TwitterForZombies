@@ -24,3 +24,12 @@
 <% associative = [ %w(Someone 1), %w(Someone 1) ] %>
 <%= associative.assoc('Someone') %><br>
 <%= associative.rassoc('1') %><br>
+
+<br>
+<%= 'Array of Strings' %><br>
+<% s = %w(Michael Jonh Mary Stuart) %>
+<%= s.cycle.take(5) %><br>
+
+<%= 'Array of Symbols' %><br>
+<% s = %i(Michael Jonh Mary Stuart) %>
+<%= s.cycle.take 6 %><br>
