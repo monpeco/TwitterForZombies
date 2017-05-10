@@ -14,7 +14,7 @@ class ZombiesController < ApplicationController
     @find_it = find_column()
     
     @f = Human.all
-    
+    @f2 = Human.pluck(:name)
   end
 
   # GET /zombies/1
