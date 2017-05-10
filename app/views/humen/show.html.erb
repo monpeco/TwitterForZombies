@@ -33,3 +33,46 @@
 <%= 'Array of Symbols' %><br>
 <% s = %i(Michael Jonh Mary Stuart) %>
 <%= s.cycle.take 6 %><br>
+
+<script>
+$( function() {
+  $("#special").click( function() {
+    $("#special").css('background', 'red')
+  } );
+} );
+</script>
+<table border="1">
+	<tr>
+		<td >-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td id="special">-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+</table>
