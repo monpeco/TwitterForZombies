@@ -50,3 +50,9 @@
 
 <%= '@find_it:' %>
 <%= debug @find_it %>
+
+<h3><%= 'Listado de todos los humanos' %></h3>
+<% @f.each do |f| %>
+  <%= f.name %><br>
+<% end %>
+

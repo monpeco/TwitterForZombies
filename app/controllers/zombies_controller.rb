@@ -12,7 +12,9 @@ class ZombiesController < ApplicationController
         logger.close
         
     @find_it = find_column()
-
+    
+    @f = Human.all
+    
   end
 
   # GET /zombies/1
