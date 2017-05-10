@@ -53,6 +53,10 @@ class ZombiesController < ApplicationController
     @zombie_like_human = Zombie.first
   end
   
+  def idiomatic
+    
+  end
+  
   # POST /zombies
   # POST /zombies.json
   def create

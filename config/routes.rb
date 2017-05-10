@@ -18,6 +18,8 @@ end
   
   # root "humen#index" # get "/", "zombies#index" 
 
+  get 'idiomatic' => 'zombies#idiomatic' #link will be /root/idiomatic
+  
   get 'zombies/wannabe' => 'zombies#wannabe'
   get 'zombies/add_to_cookie/:id' => 'zombies#add_to_cookie'
 
