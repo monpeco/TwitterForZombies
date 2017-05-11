@@ -4,6 +4,9 @@
 <h4>collect : Creates a new array containing the values returned by the block.</h4>
 <p>array = (1..10).to_a<p>
 <%= array = (1..10).to_a %><br>
-<p>array.collect{ |num| num * num }<p>
-<%= array.collect{ |num| num * num }%><br>
 
+<p>array.collect{ |num| num * num }<p>
+<%= array.collect{ |num| num * num } %><br>
+
+<p>array.select{ |num| num < 5 }<p>
+<%= array.select{ |num| num < 5 } %><br>
