@@ -35,6 +35,7 @@ class ZombiesController < ApplicationController
   def new
     @zombie = Zombie.new
     @article = 'my personal article'
+    @motivo_recibido = params[:motivo]
   end
 
   # GET /zombies/1/edit
