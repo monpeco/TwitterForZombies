@@ -55,7 +55,17 @@ class ZombiesController < ApplicationController
   end
   
   def idiomatic
-    
+    opinion=params[:option]
+    @action_result = case opinion
+                    when "ANGRY"
+                     'comfort'
+                    when "MEH"
+                     'ignore'
+                    when "HAPPY"
+                     'high_five'
+                    else
+                     'ask_opinion'
+                    end
   end
   
   # POST /zombies
