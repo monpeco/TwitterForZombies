@@ -8,5 +8,10 @@
 <p>array.collect{ |num| num * num }<p>
 <%= array.collect{ |num| num * num } %><br>
 
+<h4>select : Elements can be selected from an array according to criteria defined in a block.</h4>
+
 <p>array.select{ |num| num < 5 }<p>
 <%= array.select{ |num| num < 5 } %><br>
+
+<p>array.select{ |num| num.even? }<p>
+<%= array.select{ |num| num.even? } %><br>   
