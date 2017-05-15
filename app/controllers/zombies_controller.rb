@@ -67,8 +67,8 @@ class ZombiesController < ApplicationController
                      'ask_opinion'
                     end
                     
-    @odd_even = odd_or_even(Zombie.pluck(:id))
-    @odd_or_even_with_return = odd_or_even_with_return(Zombie.pluck(:id))
+    @odd_even = odd_or_even([1,2,4,3])
+    @odd_or_even_with_return = odd_or_even_with_return([1,2,4,3])
     
   end
   
