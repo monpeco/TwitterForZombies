@@ -66,6 +66,10 @@ class ZombiesController < ApplicationController
                     else
                      'ask_opinion'
                     end
+                    
+    @odd_even = odd_or_even(Zombie.pluck(:id))
+    @odd_or_even_with_return = odd_or_even_with_return(Zombie.pluck(:id))
+    
   end
   
   # POST /zombies
@@ -148,6 +152,20 @@ class ZombiesController < ApplicationController
       
       find_it
       
+    end
+    
+    def odd_or_even(zombies)
+      zombies.map do |zombie|
+        "odd" if zombie.odd?
+        "even" if zombie.even?
+      end
+    end
+    
+    def odd_or_even_with_return(zombies)
+      zombies.map do |zombie|
+        return "odd" if zombie.odd?
+        return "even" if zombie.even?
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
