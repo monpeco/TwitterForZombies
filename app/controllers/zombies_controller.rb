@@ -70,6 +70,8 @@ class ZombiesController < ApplicationController
     @odd_even = odd_or_even([1,2,4,3])
     @odd_or_even_with_return = odd_or_even_with_return([1,2,4,3])
     
+    @zombie_options = create_options name: 'Salma', avatar: 'special.png'
+    
   end
   
   # POST /zombies
@@ -167,7 +169,11 @@ class ZombiesController < ApplicationController
         return "even" if zombie.even?
       end
     end
-
+    
+    def create_options(options = {})
+      user_options = { name: 'user', avatar: 'default.png'}.merge!(options)
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def zombie_params
       params.require(:zombie).permit(:name, :bio, :age)
