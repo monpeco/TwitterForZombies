@@ -1,5 +1,6 @@
 module StaticHelper
 
+    # case-on-ranges
     def ageing age
         case age
           when -Float::INFINITY..20
