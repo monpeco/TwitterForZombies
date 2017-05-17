@@ -1,0 +1,3 @@
+puts 'Ruby run even txt file'
+puts 'Just run the program like this:'
+puts 'ruby program.txt'
