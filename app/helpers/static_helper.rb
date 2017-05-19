@@ -21,5 +21,10 @@ module StaticHelper
     
     fibonacci[num]
   end
+  
+  def using_fetch parameter
+    my_hash = { "a" => "You send an \"a\"", "b" => "You send an \"b\"" }
+    my_hash.fetch(parameter, "The default value")
+  end
     
 end
