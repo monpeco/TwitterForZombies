@@ -24,7 +24,10 @@ module StaticHelper
   
   def using_fetch parameter
     my_hash = { "a" => "You send an \"a\"", "b" => "You send an \"b\"" }
-    my_hash.fetch(parameter, "The default value")
+    my_hash.fetch(parameter, "There is no \"#{parameter}\" key in the hash")
+    
+    # This will be the use of fetch with a block
+    # my_hash.fetch(parameter) { |el| "go fish, #{el}"}
   end
     
 end
