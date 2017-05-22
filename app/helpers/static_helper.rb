@@ -42,4 +42,8 @@ module StaticHelper
     (5..10).reduce(1, :*)                         #=> 151200
   end
 
+  def reduce_block# Same using a block
+    (5..10).inject(1) {|product, n| product * n } #=> 151200
+  end
+  
 end
