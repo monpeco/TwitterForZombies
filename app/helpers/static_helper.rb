@@ -34,4 +34,7 @@ module StaticHelper
     (5..10).reduce(:+)  #=> 45
   end
   
+  def inject_plus       # Same using a block and inject
+    (5..10).inject {|sum, n| sum + n }            #=> 45
+  end
 end
