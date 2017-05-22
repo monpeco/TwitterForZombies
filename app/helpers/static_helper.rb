@@ -29,5 +29,9 @@ module StaticHelper
     # This will be the use of fetch with a block
     # my_hash.fetch(parameter) { |el| "go fish, #{el}"}
   end
-    
+  
+  def reduce_plus       # Sum some numbers
+    (5..10).reduce(:+)  #=> 45
+  end
+  
 end
