@@ -72,6 +72,8 @@ class ZombiesController < ApplicationController
     
     @zombie_options = create_options name: 'Salma', avatar: 'special.png'
     
+    @input = "<a href='#2'>Go to #2</a>"
+    
   end
   
   # POST /zombies

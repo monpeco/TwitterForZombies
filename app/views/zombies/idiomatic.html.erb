@@ -40,3 +40,7 @@
 <br>
 <b><%= '%w(jonh mary michael).map(&:upcase)' %></b><br>
 <%= %w(jonh mary michael).map(&:upcase) %><br>
+
+<br>
+<b><%= 'sanitize @input, tags: %w(br)' %></b><br>
+<%= sanitize @input, tags: %w(br) %>
