@@ -1,4 +1,8 @@
 class Human < ActiveRecord::Base
+    #https://rails-bestpractices.com/posts/2013/04/18/clever-enums-in-rails/
+    POWERS = [POWER_FIST = 'fist', POWER_KICK = 'kick', POWER_GUN = 'gun']
+    
+    validates :power, inclusion: {in: POWERS}
     
     default_scope { where(fighting: true) }
 
@@ -26,4 +30,10 @@ class Human < ActiveRecord::Base
     def make_figthing
        self.fighting = true if age > 21
     end
+    
+    def change_power
+        self.power = Human::POWER_GUN
+        save!
+    end
+    
 end
