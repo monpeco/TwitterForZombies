@@ -36,4 +36,8 @@ class Human < ActiveRecord::Base
         save!
     end
     
+    def name_with_initial
+      "#{name}. #{power}"
+    end
+    
 end

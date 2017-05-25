@@ -44,3 +44,8 @@
 <br>
 <b><%= 'sanitize @input, tags: %w(br)' %></b><br>
 <%= sanitize @input, tags: %w(a) %>
+
+<br>
+<%= collection_select(:huma, :id, Human.all, :id, :name_with_initial, prompt: true) %>
+
+
