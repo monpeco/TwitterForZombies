@@ -1,4 +1,4 @@
-<h1>idiomatic</h1>
+<h1 id = "1">idiomatic</h1>
 <p>https://github.com/franzejr/best-ruby</p>
 
 <h4>collect : Creates a new array containing the values returned by the block.</h4>
@@ -16,7 +16,7 @@
 <p>array.select{ |num| num.even? }<p>
 <%= array.select{ |num| num.even? } %><br>
 
-<h4>Conditional assignment</h4>
+<h4 id = "2">Conditional assignment</h4>
 <p>string_version = some_bool ? 'yes' : 'no'<p>
 <%= some_bool=true %><br>
 <%= string_version = some_bool ? 'yes' : 'no' %><br>
@@ -43,4 +43,4 @@
 
 <br>
 <b><%= 'sanitize @input, tags: %w(br)' %></b><br>
-<%= sanitize @input, tags: %w(br) %>
+<%= sanitize @input, tags: %w(a) %>
