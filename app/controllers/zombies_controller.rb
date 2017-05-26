@@ -76,6 +76,11 @@ class ZombiesController < ApplicationController
     
   end
   
+  def changing_power
+    @zombie_f = Human.find(4)
+    redirect_to :action => :idiomatic
+  end
+  
   # POST /zombies
   # POST /zombies.json
   def create
