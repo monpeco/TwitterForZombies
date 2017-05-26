@@ -78,7 +78,7 @@ class ZombiesController < ApplicationController
   
   def changing_power
     @zombie_f = Human.find(4)
-    redirect_to :action => :idiomatic
+    redirect_to :action => :idiomatic, :anchor => '2'
   end
   
   # POST /zombies
