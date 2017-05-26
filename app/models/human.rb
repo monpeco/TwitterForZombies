@@ -37,7 +37,7 @@ class Human < ActiveRecord::Base
     end
     
     def name_with_initial
-      "#{name}. #{power}"
+      "Name: #{name} - Power: #{power}"
     end
     
 end
