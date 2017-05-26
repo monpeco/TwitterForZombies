@@ -48,4 +48,6 @@
 <br>
 <%= collection_select(:huma, :id, Human.all, :id, :name_with_initial, prompt: true) %>
 
+<br>
+<%= link_to 'changing_power', changing_power_path(Human.first) %>
 
