@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'static/tricks'
+  get 'static/red'
 
 namespace :admin do
    resources :photos
