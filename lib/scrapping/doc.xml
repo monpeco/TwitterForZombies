@@ -1,0 +1,15 @@
+<xml version="1.0" encoding="utf-8" >
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<channel>
+  <item>
+    <title>test</title>
+    <g:id>1</g:id>
+    <g:color>blue</g:color>
+  </item>
+  <item>
+    <title>test2</title>
+    <g:id>2</g:id>
+    <g:color>red</g:color>
+  </item>
+</channel>
+</rss>
