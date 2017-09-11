@@ -176,3 +176,10 @@ change_column :zombies, :age, :integer, limit: 4
 change_column_default :zombies, is_admin, default: true
 ```
 
+#### Other resources
+
+* https://github.com/alemohamad/ruby-style-guide/blob/master/README-esLA.md
+* https://github.com/thoughtbot/guides/tree/master/best-practices
+* https://github.com/github/rubocop-github/blob/master/STYLEGUIDE.md
+* https://github.com/franzejr/best-ruby
+
