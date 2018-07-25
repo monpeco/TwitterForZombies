@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle httparty
 gem "httparty"
 # Bundle nokogiri
-gem "nokogiri", ">= 1.6.7.rc"
+gem "nokogiri", '~> 1.8.1'
 #  'pry-rails'
 gem 'pry-rails', :group => :development
 # Bundle json
